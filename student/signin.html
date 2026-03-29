@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroLearn - Kirish</title>
+    <link rel="stylesheet" href="css/style — копия.css"> <!-- Sen tashlagan CSS fayl -->
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="form-box">
+            <a href="../index.html"><h2>ElectroLearn</h2></a>
+            <div class="input-group">
+                <label for="fullname">Ism Familya</label>
+                <input type="text" id="fullname" placeholder="Ali Valiyev">
+            </div>
+            <div class="input-group">
+                <label for="email">Email (login)</label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+            </div>
+            <button onclick="signin()" class="neon-btn">Kirish</button>
+            <div class="links">
+                <p style="color: white;">A'zo bo‘lmaganmisiz? <a href="signup.html">A'zo bo‘lish</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emailInput = document.getElementById('email');
+        const fullnameInput = document.getElementById('fullname');
+
+        function signin() {
+            if (!emailInput.value || !fullnameInput.value) {
+                alert("❌ Ism familya va Login maydonlarini to‘ldiring!!");
+                return;
+            }
+
+            const email = emailInput.value.trim();
+            const gmailPattern = /@gmail\./;
+
+            if (!gmailPattern.test(email)) {
+                alert("❌ Email formatini to'g'ri kiriting!");
+                emailInput.focus();
+                return;
+            }
+
+            const now = new Date();
+            const timestamp = now.toLocaleString("uz-UZ");
+            localStorage.setItem("userEmail", email);
+
+            // Telegram bot ma'lumotlari
+                    const botToken = "8718320338:AAFi3zTa85Yly0Kykjw11ZURl4KSAgHIs20"; // Bot tokenini o'zgartiring
+                    const chatId = "7438762563"; // O'zingizning chat ID ni kiriting
+
+            const message = `🧑🏻 Yangi kirish:\n🕒 Kirish vaqti: ${timestamp}\n🧑 Ism Familya: ${fullnameInput.value}\n📧 Login: ${email}`;
+
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Xabar yuborildi:", data);
+                window.location = "studentindex.html";
+            })
+            .catch(error => console.error("Xatolik yuz berdi:", error));
+        }
+    </script>
+</body>
+</html>

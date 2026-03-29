@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ElectroLearn</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+          font-family: 'Segoe UI', sans-serif;
+        }
+    
+        .button-container {
+          display: flex;
+          gap: 20px;
+        }
+    
+        .btn {
+            
+          padding: 15px 25px;
+          border: none;
+          border-radius: 50px;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
+          display: flex;
+          justify-content: center;
+        }
+    
+        .btn:hover {
+          transform: scale(1.05);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+          
+        }
+        .btn:hover a {
+            color: lightseagreen; /* hover paytida matn rangi o‘zgarmaydi */
+        }
+      </style>
+      <style>
+        /* Tugma (button) uslubi */
+        .custom-dropdown-btn {
+          padding: 15px 30px;
+          border: none;
+          border-radius: 50px;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+        }
+        
+        .custom-dropdown-btn:hover {
+          transform: scale(1.05);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* "Yordam" yozuviga ko‘kroq tus beramiz */
+        .yordam-text {
+          color: #e0eaff; /* Yengil ko‘kimtir */
+        }
+        
+        /* Hover paytida yozuv rangi o‘zgarmasligi uchun uni alohida belgilaymiz */
+        .custom-dropdown-btn:hover .yordam-text {
+          color: lightseagreen;
+        }
+        
+        /* Dropdown menyusi */
+        .custom-dropdown-menu {
+          border: none;
+          border-radius: 12px;
+          padding: 10px 0;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+          background: white;
+          animation: fadeIn 0.3s ease;
+          margin-top: 10px;
+        }
+        
+        .custom-dropdown-menu .dropdown-item {
+          padding: 10px 20px;
+          color: #333;
+          font-weight: 500;
+          transition: all 0.2s ease;
+        }
+        
+        .custom-dropdown-menu .dropdown-item:hover {
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          color: white;
+          border-radius: 8px;
+        }
+        
+        /* Animatsiya */
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        </style>
+        
+          <style>
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 50px;
+    }
+
+    .custom-file-upload {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .custom-file-upload:hover {
+      background-color: #218838;
+    }
+
+    #excelUpload {
+      display: none;
+    }
+
+    #sendBtn {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #sendBtn:hover {
+      background-color: #0056b3;
+    }
+
+    #fileName {
+      font-family: sans-serif;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+  
+  <style>
+        @media (max-width: 1200px) {
+      .button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .custom-dropdown-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .container {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .custom-file-upload,
+      #sendBtn {
+        width: 100%;
+        text-align: center;
+      }
+
+      #fileName {
+        font-size: 13px;
+      }
+
+      input#linkInput {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .content {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      .custom-dropdown-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      .dropdown-menu.custom-dropdown-menu {
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+      }
+
+      .container.mt-1 {
+        width: 100%;
+        padding: 0 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .button-container {
+        gap: 10px;
+      }
+
+      .btn {
+        font-size: 13px;
+        padding: 10px 15px;
+      }
+
+      .custom-dropdown-btn {
+        font-size: 13px;
+        padding: 10px 15px;
+      }
+
+      input#linkInput {
+        font-size: 14px;
+      }
+
+      #fileInfo {
+        font-size: 13px;
+      }
+
+      object.w-100 {
+        height: 400px !important;
+      }
+    }
+
+  </style>
+        
+
+</head>
+
+<body>
+    
+    <div class="container-fluid position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="studentindex.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="me-2"></i>ElectroLearn</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="ms-3">
+                        <h6 class="mb-0">Foydalanuvchi</h6>
+                        <span>O`quvchi</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="studentindex.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Asosiy</a>
+                    <a href="lessons.html" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Mashg`ulotlar</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Qo`llanmalar</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="books.html" class="dropdown-item">Kitoblar</a>
+                            <a href="videos.html" class="dropdown-item">Video darslar</a>
+                            <a href="sillabus.html" class="dropdown-item">Fan dasturlar va Sillabuslar</a>
+
+                        </div>
+                    </div>
+                    <!-- <a href="report.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Hisobot</a> -->
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="studentindex.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Qidiruv">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Xabarlar</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <!-- <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div> -->
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <!-- <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div> -->
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <!-- <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div> -->
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">Barchasi</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Bildirishnoma</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <!-- <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small> -->
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <!-- <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small> -->
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <!-- <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small> -->
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">Barcha bildirishnomalar</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">User</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">Shaxsiy kabinet</a>
+                            <a href="#" class="dropdown-item">Sozlamalar</a>
+                            <a href="signin.html" class="dropdown-item">Chiqish</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- stasks start -->
+
+            <div class="continer-fluid p-3">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="studentindex.html">Asosiy</a> /
+                        <a href="lessons.html">Mashg`ulotlar</a> /
+                        <a href="tasks.html">Mashg`ulot</a> /
+                        <a href="stasks.html">Topshiriq</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2" style="border: 1px solid rgb(8, 173, 176); padding-left: 30px; padding-right: 30px; padding-top: 20px;">
+                        <div class="row mb-2 d-flex align-items-center justify-content-between">
+                            <h6 class="col-5 text-primary mt-2 text-start">Topshiriq</h6>
+                            <h6 class="col-5 text-primary mt-2 text-end" id="taskCount"></h6>
+                            <!-- <a href="#" class="btn btn-primary text-center">Virtual laborotoriyaga o`tish</a> -->
+                        </div>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-12 p-1 lScroll" id="stasksLink" style="display: inline-block; ">
+                                <!-- stasksBtns -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10">
+                        <div class="row m-0 p-3" style="border: 1px solid  rgb(8, 173, 176);">
+                            <div class="col-12">
+                                <object 
+                                    id="objL" 
+                                    type="application/pdf"  
+                                    class="w-100" 
+                                    style="height: 600px;"
+                                    data="sourses/books/amaliyot/1.pdf">
+                                </object>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-2">
+                                <div class="button-container">
+                                    <button class="btn" style="height: 60px;"><a href="lessons.html" style="color: white;" class="yordam-text">Orqaga</a></button>
+                                    <button class="btn" style="height: 60px;"><a href="studentindex.html" style="color: white; width: 120px;" class="yordam-text">Bosh Sahifaga</a></button>
+                                    <button class="btn" style="height: 60px;"><a href="https://excel.cloud.microsoft/" style="color: white; width: 100px;" class="yordam-text">Bajarish</a></button>
+                                    <div class="dropdown">
+                                        <button class="btn custom-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <img src="img/help.png" alt="help" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                                          <span class="yordam-text">Yordam</span>
+                                        </button>
+                                        <ul class="dropdown-menu custom-dropdown-menu">
+                                          <li><a class="dropdown-item" href="lecture.html">Ma'ruza mashg‘ulotlari</a></li>
+                                          <li><a class="dropdown-item" href="videos.html">Video darsliklar</a></li>
+                                          <li><a class="dropdown-item" href="books.html">Adabiyotlar</a></li>
+                                        </ul>
+                                      </div>
+                                      <div class="container mt-1">
+                                        <div style="display: flex; flex-direction: column; max-width: 400px; margin: auto;">
+                                          <label for="fileInput" style="margin-bottom: 6px; font-weight: 500; font-size: 14px; color: #333;">
+                                            📎 Fayl tanlang (PDF, Word, Excel)
+                                          </label>
+                                          <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.xls,.xlsx" 
+                                                style="padding: 6px 10px; font-size: 14px; border: 1px solid #007bff; border-radius: 6px; background-color: #f8f9fa; cursor: pointer; transition: all 0.3s;">
+                                        </div>
+
+                                        <div id="fileInfo" style="margin-top: 8px; color: green; font-size: 13px;"></div>
+                                        <button id="sendBtn" 
+                                                style="margin-top: 10px; padding: 8px 16px; font-size: 14px; border-radius: 6px; background-color: #007bff; color: white; border: none; cursor: pointer; transition: all 0.3s;">
+                                          📤 Yuborish
+                                        </button>
+                                      </div>
+
+                                      
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <object 
+                            id="objL" 
+                            type="application/pdf"  
+                            class="w-100" 
+                            style="height: 600px;"
+                            data="laborotory2.html  ">
+                        </object>
+                    </div>
+                </div>
+            </div>
+            <!-- stasks end -->
+            
+
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/stasks.js"></script>
+    <script>
+      // Telegram bot ma'lumotlari
+                    const botToken = "8718320338:AAFi3zTa85Yly0Kykjw11ZURl4KSAgHIs20"; // Bot tokenini o'zgartiring
+                    const chatId = "7438762563"; // O'zingizning chat ID ni kiriting
+
+      const fileInput = document.getElementById("fileInput");
+      const fileInfo = document.getElementById("fileInfo");
+      const sendBtn = document.getElementById("sendBtn");
+
+      sendBtn.addEventListener("click", async function () {
+        const file = fileInput.files[0];
+
+        if (!file) {
+          fileInfo.textContent = "❌ Iltimos, fayl tanlang!";
+          fileInfo.style.color = "red";
+          return;
+        }
+
+        const email1 = localStorage.getItem("userEmail") || "Noma’lum";
+        const sendTime = new Date().toLocaleString();
+        const caption = `📧 Email: ${email1}\n🕒 Yuborilgan vaqt: ${sendTime}\n📄 Fayl nomi: ${file.name}`;
+
+        const formData = new FormData();
+        formData.append("chat_id", chatId);
+        formData.append("caption", caption);
+        formData.append("document", file);
+
+        try {
+          const response = await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
+            method: "POST",
+            body: formData
+          });
+
+          if (response.ok) {
+            console.log("Fayl yuborildi.");
+            alert("✅ Fayl muvaffaqiyatli yuborildi!");
+            fileInfo.textContent = "";
+            fileInput.value = "";
+          } else {
+            const errText = await response.text();
+            console.error("Telegram xatosi:", errText);
+            alert("❌ Telegram API xatosi. Tafsilotlar konsolda.");
+          }
+        } catch (error) {
+          console.error("Tarmoq xatosi:", error);
+          alert("❌ Tarmoqda muammo! Internetni tekshirib ko‘ring.");
+        }
+      });
+    </script>
+
+      
+      
+    
+</body>
+
+</html>

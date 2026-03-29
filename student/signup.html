@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ElectroLearn</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/signupstyle.css"> 
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            background: #fff;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ccc;
+        }
+
+        .form-floating > label {
+            padding-left: 1rem;
+        }
+
+        .btn-primary {
+            background: #2575fc;
+            border: none;
+            border-radius: 10px;
+            padding: 0.75rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #1a5edb;
+        }
+
+        h3, h4 {
+            font-weight: 700;
+            color: #2575fc;
+        }
+
+        .form-check-label, a {
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: #2575fc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .brand-title {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card col-11 col-sm-8 col-md-6 col-lg-4">
+        <div class="text-center mb-4">
+            <a href="../index.html"><h3 class="brand-title">ElectroLearn</h3></a>
+            <h4 class="mt-2">A'zo bo'lish</h4>
+        </div>
+        <div class="form-floating mb-4">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Jon Anik">
+            <label for="floatingPassword">Ism Familya</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingText" placeholder="Talaba007">
+            <label for="floatingText">Login</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email</label>
+        </div>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Meni eslab qol</label>
+            </div>
+        </div>
+        <button class="btn btn-primary w-100 mb-3" onclick="signin()">A'zo bo'lish</button>
+        <p class="text-center">A'zo bo‘lganmisiz? <a href="signin.html">Kirish</a></p>
+    </div>
+
+    <!-- JS Libraries -->
+    <script>
+        const floatingText = document.querySelector('#floatingText')
+        const floatingInput = document.querySelector('#floatingInput');
+        const floatingPassword = document.querySelector('#floatingPassword');
+
+        function signin() {
+            if (!(floatingInput && floatingInput.value) || !(floatingPassword && floatingPassword.value) || !(floatingText && floatingText.value)) {
+                alert("❌ Ism Familya, Login va Email maydonlarini to‘ldiring!!");
+                return;
+            }
+
+            const email = floatingInput.value.trim();
+            const gmailPattern = /@gmail\./;
+
+            if (!gmailPattern.test(email)) {
+                alert("❌ Email formatini to'g'ri kiriting!");
+                floatingInput.focus();
+                return;
+            } else {
+                const now = new Date();
+                const timestamp = now.toLocaleString("uz-UZ");
+                localStorage.setItem("userEmail", floatingInput.value);
+
+                // Telegram bot ma'lumotlari
+                    const botToken = "8718320338:AAFi3zTa85Yly0Kykjw11ZURl4KSAgHIs20"; // Bot tokenini o'zgartiring
+                    const chatId = "7438762563"; // O'zingizning chat ID ni kiriting
+                const message = `🧑🏻 Yangi azolik:\n🕒 Kirish vaqti: ${timestamp}\n🧑 Ism Familya: ${floatingPassword.value}\n📧 Login: ${floatingText.value}\n📧 Email: ${floatingInput.value}`;
+
+                fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Xabar yuborildi:", data);
+                    window.location = "studentindex.html";
+                })
+                .catch(error => console.error("Xatolik yuz berdi:", error));
+            }
+        }
+    </script>
+</body>
+
+</html>
