@@ -3,28 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElectroLearn - Kirish</title>
-    <link rel="stylesheet" href="css/style — копия.css"> <!-- Sen tashlagan CSS fayl -->
+    <title>CultureLearn — Kirish</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg:#07141a;
+            --bg2:#0b2026;
+            --surface:rgba(255,255,255,.08);
+            --line:rgba(255,255,255,.12);
+            --text:#f5fbfa;
+            --muted:#a9bbb9;
+            --teal:#45e6c1;
+            --cyan:#53c8ff;
+            --gold:#f6c66e;
+            --danger:#ff7b7b;
+        }
+
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{
+            margin:0;
+            min-height:100vh;
+            font-family:'Manrope',sans-serif;
+            color:var(--text);
+            background:
+                radial-gradient(circle at 12% 15%, rgba(69,230,193,.14), transparent 24%),
+                radial-gradient(circle at 86% 12%, rgba(83,200,255,.12), transparent 25%),
+                radial-gradient(circle at 80% 88%, rgba(246,198,110,.10), transparent 25%),
+                linear-gradient(135deg,#041015 0%,#08181d 45%,#0b2228 100%);
+            overflow-x:hidden;
+        }
+
+        body::before{
+            content:"";
+            position:fixed;
+            inset:0;
+            pointer-events:none;
+            opacity:.18;
+            background-image:
+                linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+            background-size:42px 42px;
+            mask-image:linear-gradient(to bottom,black,transparent 85%);
+        }
+
+        .orb{
+            position:fixed;
+            border-radius:50%;
+            filter:blur(18px);
+            opacity:.55;
+            pointer-events:none;
+            animation:float 10s ease-in-out infinite;
+        }
+        .orb.one{width:260px;height:260px;left:-90px;top:15%;background:rgba(69,230,193,.12)}
+        .orb.two{width:310px;height:310px;right:-110px;bottom:10%;background:rgba(83,200,255,.10);animation-delay:-3s}
+        .orb.three{width:180px;height:180px;right:18%;top:-70px;background:rgba(246,198,110,.08);animation-delay:-6s}
+
+        @keyframes float{
+            0%,100%{transform:translateY(0) translateX(0)}
+            50%{transform:translateY(-22px) translateX(10px)}
+        }
+
+        .page{
+            min-height:100vh;
+            display:grid;
+            grid-template-columns:1.2fr .8fr;
+            position:relative;
+            z-index:1;
+        }
+
+        .visual{
+            position:relative;
+            padding:54px 6vw;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            min-height:100vh;
+        }
+
+        .brand{
+            display:inline-flex;
+            align-items:center;
+            gap:13px;
+            color:#fff;
+            text-decoration:none;
+            width:max-content;
+            font-weight:800;
+            letter-spacing:-.4px;
+            font-size:20px;
+        }
+
+        .brand-mark{
+            width:42px;height:42px;border-radius:14px;
+            display:grid;place-items:center;
+            color:#07141a;
+            background:linear-gradient(135deg,var(--teal),var(--cyan));
+            box-shadow:0 12px 35px rgba(69,230,193,.18);
+            font-weight:900;
+        }
+
+        .hero{
+            max-width:720px;
+            padding:70px 0 50px;
+        }
+
+        .eyebrow{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:9px 14px;
+            border-radius:999px;
+            border:1px solid var(--line);
+            background:rgba(255,255,255,.05);
+            color:#b9f7e9;
+            font-size:12px;
+            font-weight:700;
+            letter-spacing:1.2px;
+            text-transform:uppercase;
+            backdrop-filter:blur(12px);
+        }
+
+        .eyebrow i{
+            width:8px;height:8px;border-radius:50%;
+            background:var(--teal);
+            box-shadow:0 0 14px var(--teal);
+        }
+
+        h1{
+            margin:22px 0 18px;
+            font-family:'Playfair Display',serif;
+            font-size:clamp(44px,6vw,82px);
+            line-height:.98;
+            letter-spacing:-2px;
+        }
+
+        .gradient-text{
+            background:linear-gradient(90deg,#ffffff 5%,#87f6dd 45%,#7bd5ff 78%,#f6c66e 100%);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+        }
+
+        .hero p{
+            max-width:650px;
+            color:var(--muted);
+            font-size:16px;
+            line-height:1.9;
+            margin:0 0 30px;
+        }
+
+        .chips{
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+
+        .chip{
+            padding:10px 13px;
+            border-radius:13px;
+            background:rgba(255,255,255,.05);
+            border:1px solid rgba(255,255,255,.09);
+            color:#d9e6e4;
+            font-size:13px;
+        }
+
+        .compass{
+            position:absolute;
+            right:4vw;
+            bottom:8vh;
+            width:250px;height:250px;
+            border-radius:50%;
+            border:1px solid rgba(255,255,255,.10);
+            box-shadow:inset 0 0 50px rgba(69,230,193,.05);
+            opacity:.9;
+            pointer-events:none;
+        }
+
+        .compass::before,.compass::after{
+            content:"";
+            position:absolute;
+            inset:28px;
+            border-radius:50%;
+            border:1px dashed rgba(255,255,255,.10);
+        }
+
+        .compass::after{
+            inset:72px;
+            border-style:solid;
+        }
+
+        .needle{
+            position:absolute;
+            width:2px;
+            height:160px;
+            left:50%;top:45px;
+            background:linear-gradient(to bottom,var(--gold) 0 50%,rgba(255,255,255,.14) 50% 100%);
+            transform:rotate(26deg);
+            transform-origin:center center;
+            box-shadow:0 0 16px rgba(246,198,110,.25);
+        }
+
+        .footer-note{
+            color:#7f9592;
+            font-size:12px;
+            letter-spacing:.2px;
+        }
+
+        .form-side{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:36px;
+            position:relative;
+        }
+
+        .form-card{
+            width:min(100%,470px);
+            border-radius:34px;
+            padding:34px;
+            background:linear-gradient(180deg,rgba(255,255,255,.105),rgba(255,255,255,.05));
+            border:1px solid rgba(255,255,255,.12);
+            box-shadow:0 30px 90px rgba(0,0,0,.42);
+            backdrop-filter:blur(24px);
+            position:relative;
+            overflow:hidden;
+        }
+
+        .form-card::before{
+            content:"";
+            position:absolute;
+            width:210px;height:210px;border-radius:50%;
+            background:rgba(69,230,193,.08);
+            top:-115px;right:-90px;
+            filter:blur(10px);
+        }
+
+        .mobile-brand{display:none}
+
+        .small-tag{
+            color:var(--gold);
+            font-size:12px;
+            text-transform:uppercase;
+            letter-spacing:1.2px;
+            font-weight:800;
+        }
+
+        .form-card h2{
+            margin:8px 0 10px;
+            font-size:34px;
+            letter-spacing:-1px;
+        }
+
+        .lead{
+            margin:0 0 28px;
+            color:#9fb1ae;
+            font-size:14px;
+            line-height:1.7;
+        }
+
+        .input-group{margin-bottom:17px}
+        .input-group label{
+            display:block;
+            margin-bottom:8px;
+            font-size:13px;
+            font-weight:700;
+            color:#d9e6e4;
+        }
+
+        .input-wrap{
+            position:relative;
+        }
+
+        .input-icon{
+            position:absolute;
+            left:16px;
+            top:50%;
+            transform:translateY(-50%);
+            font-size:17px;
+            opacity:.8;
+        }
+
+        input{
+            width:100%;
+            height:56px;
+            border:1px solid rgba(255,255,255,.12);
+            outline:none;
+            border-radius:16px;
+            background:rgba(255,255,255,.055);
+            color:white;
+            padding:0 16px 0 48px;
+            font-family:inherit;
+            font-size:14px;
+            transition:.25s ease;
+        }
+
+        input::placeholder{color:#6e8581}
+        input:focus{
+            border-color:rgba(69,230,193,.65);
+            background:rgba(255,255,255,.075);
+            box-shadow:0 0 0 4px rgba(69,230,193,.08);
+        }
+
+        .neon-btn{
+            width:100%;
+            border:0;
+            border-radius:17px;
+            height:58px;
+            cursor:pointer;
+            margin-top:8px;
+            font-family:inherit;
+            font-weight:800;
+            font-size:15px;
+            color:#061317;
+            background:linear-gradient(90deg,var(--teal),#73d9ff);
+            box-shadow:0 14px 36px rgba(69,230,193,.18);
+            transition:.25s ease;
+        }
+
+        .neon-btn:hover{
+            transform:translateY(-2px);
+            box-shadow:0 18px 44px rgba(69,230,193,.28);
+        }
+
+        .links{
+            margin-top:22px;
+            text-align:center;
+            font-size:13px;
+            color:#90a4a1;
+        }
+
+        .links a{
+            color:#8ff1da;
+            font-weight:800;
+            text-decoration:none;
+        }
+
+        .security{
+            margin-top:24px;
+            display:flex;
+            align-items:flex-start;
+            gap:10px;
+            padding:13px 14px;
+            border-radius:15px;
+            background:rgba(255,255,255,.035);
+            border:1px solid rgba(255,255,255,.07);
+            color:#829995;
+            font-size:11px;
+            line-height:1.6;
+        }
+
+        .security b{color:#bcd2ce}
+
+        @media(max-width:980px){
+            .page{grid-template-columns:1fr}
+            .visual{min-height:auto;padding:30px 24px 10px}
+            .hero{padding:55px 0 30px}
+            .hero h1{font-size:52px}
+            .compass{display:none}
+            .footer-note{display:none}
+            .form-side{min-height:auto;padding:25px 20px 50px}
+            .mobile-brand{display:block;margin-bottom:24px}
+        }
+
+        @media(max-width:560px){
+            .visual{display:none}
+            .form-side{min-height:100vh;padding:18px}
+            .form-card{padding:26px 20px;border-radius:26px}
+            .mobile-brand{display:block}
+            .form-card h2{font-size:30px}
+        }
+    </style>
 </head>
 <body>
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
 
-    <div class="wrapper">
-        <div class="form-box">
-            <a href="../index.html"><h2>ElectroLearn</h2></a>
-            <div class="input-group">
-                <label for="fullname">Ism Familya</label>
-                <input type="text" id="fullname" placeholder="Ali Valiyev">
+    <main class="page">
+        <section class="visual">
+            <a class="brand" href="../index.html">
+                <span class="brand-mark">C</span>
+                <span>CultureLearn</span>
+            </a>
+
+            <div class="hero">
+                <span class="eyebrow"><i></i> 51010304 · Turizm yo‘nalishi</span>
+                <h1>
+                    <span class="gradient-text">Madaniyatni anglash.</span><br>
+                    Kasbni mukammal egallash.
+                </h1>
+                <p>
+                    Umummadaniy kompetensiyani rivojlantirishga yo‘naltirilgan interaktiv ta’lim muhiti:
+                    madaniyatlararo muloqot, turizm etikasi, milliy meros, xizmat ko‘rsatish madaniyati
+                    va vaziyatli topshiriqlar bir platformada.
+                </p>
+
+                <div class="chips">
+                    <span class="chip">Madaniyatlararo muloqot</span>
+                    <span class="chip">Turizm etikasi</span>
+                    <span class="chip">Milliy meros</span>
+                    <span class="chip">Amaliy kompetensiya</span>
+                </div>
             </div>
-            <div class="input-group">
-                <label for="email">Email (login)</label>
-                <input type="email" id="email" placeholder="example@gmail.com">
+
+            <div class="compass" aria-hidden="true">
+                <div class="needle"></div>
             </div>
-            <button onclick="signin()" class="neon-btn">Kirish</button>
-            <div class="links">
-                <p style="color: white;">A'zo bo‘lmaganmisiz? <a href="signup.html">A'zo bo‘lish</a></p>
+
+            <div class="footer-note">
+                Kasbiy ta’limda umummadaniy kompetensiyani shakllantirish uchun didaktik raqamli muhit.
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section class="form-side">
+            <div class="form-card">
+                <div class="mobile-brand">
+                    <a class="brand" href="../index.html">
+                        <span class="brand-mark">C</span>
+                        <span>CultureLearn</span>
+                    </a>
+                </div>
+
+                <div class="small-tag">Shaxsiy kabinet</div>
+                <h2>Xush kelibsiz</h2>
+                <p class="lead">
+                    Ta’lim modullari va amaliy topshiriqlarga kirish uchun ma’lumotlaringizni kiriting.
+                </p>
+
+                <div class="input-group">
+                    <label for="fullname">Ism Familya</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">◎</span>
+                        <input type="text" id="fullname" placeholder="Ali Valiyev">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email (login)</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">✉</span>
+                        <input type="email" id="email" placeholder="example@gmail.com">
+                    </div>
+                </div>
+
+                <button onclick="signin()" class="neon-btn">Kirish →</button>
+
+                <div class="links">
+                    A'zo bo‘lmaganmisiz? <a href="signup.html">A'zo bo‘lish</a>
+                </div>
+
+                <div class="security">
+                    <span>◈</span>
+                    <span><b>Platforma kirishi.</b> Kiritilgan ma’lumotlar keyingi ta’lim sahifasiga o‘tish uchun ishlatiladi.</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script>
         const emailInput = document.getElementById('email');
@@ -47,11 +486,12 @@
 
             const now = new Date();
             const timestamp = now.toLocaleString("uz-UZ");
+
             localStorage.setItem("userEmail", email);
 
             // Telegram bot ma'lumotlari
-                    const botToken = "8718320338:AAFi3zTa85Yly0Kykjw11ZURl4KSAgHIs20"; // Bot tokenini o'zgartiring
-                    const chatId = "7438762563"; // O'zingizning chat ID ni kiriting
+            const botToken = "8832474177:AAHSn9e7auSBqSpdRrQ8Smo-ioC5VmDrKhw"; // Bot tokenini o'zgartiring
+            const chatId = "1305055395"; // O'zingizning chat ID ni kiriting
 
             const message = `🧑🏻 Yangi kirish:\n🕒 Kirish vaqti: ${timestamp}\n🧑 Ism Familya: ${fullnameInput.value}\n📧 Login: ${email}`;
 

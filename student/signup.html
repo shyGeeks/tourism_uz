@@ -1,122 +1,459 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="uz">
 <head>
     <meta charset="utf-8">
-    <title>ElectroLearn</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultureLearn — A'zo bo‘lish</title>
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/signupstyle.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
+        :root{
+            --bg:#07141a;
+            --text:#f5fbfa;
+            --muted:#a5b7b4;
+            --teal:#45e6c1;
+            --cyan:#53c8ff;
+            --gold:#f6c66e;
+            --line:rgba(255,255,255,.11);
         }
 
-        .card {
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            background: #fff;
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            min-height:100vh;
+            font-family:'Manrope',sans-serif;
+            color:var(--text);
+            background:
+                radial-gradient(circle at 8% 15%, rgba(246,198,110,.12), transparent 24%),
+                radial-gradient(circle at 92% 16%, rgba(83,200,255,.12), transparent 24%),
+                radial-gradient(circle at 70% 90%, rgba(69,230,193,.10), transparent 26%),
+                linear-gradient(140deg,#041014 0%,#07191e 43%,#0d252a 100%);
+            overflow-x:hidden;
         }
 
-        .form-control {
-            border-radius: 10px;
-            padding: 0.75rem 1rem;
-            border: 1px solid #ccc;
+        body::before{
+            content:"";
+            position:fixed;
+            inset:0;
+            pointer-events:none;
+            background:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size:46px 46px;
+            opacity:.32;
         }
 
-        .form-floating > label {
-            padding-left: 1rem;
+        .page{
+            min-height:100vh;
+            display:grid;
+            grid-template-columns:.86fr 1.14fr;
+            position:relative;
+            z-index:1;
         }
 
-        .btn-primary {
-            background: #2575fc;
-            border: none;
-            border-radius: 10px;
-            padding: 0.75rem;
-            font-weight: 600;
-            transition: background 0.3s ease;
+        .form-side{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:38px;
+            min-height:100vh;
         }
 
-        .btn-primary:hover {
-            background: #1a5edb;
+        .card{
+            width:min(100%,500px);
+            padding:34px;
+            border-radius:34px;
+            border:1px solid var(--line);
+            background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.05));
+            backdrop-filter:blur(24px);
+            box-shadow:0 30px 90px rgba(0,0,0,.42);
+            position:relative;
+            overflow:hidden;
         }
 
-        h3, h4 {
-            font-weight: 700;
-            color: #2575fc;
+        .card::before{
+            content:"";
+            position:absolute;
+            width:220px;height:220px;border-radius:50%;
+            background:rgba(83,200,255,.08);
+            right:-110px;top:-120px;
         }
 
-        .form-check-label, a {
-            font-size: 0.9rem;
+        .brand{
+            display:inline-flex;
+            align-items:center;
+            gap:12px;
+            color:white;
+            text-decoration:none;
+            font-weight:800;
+            font-size:19px;
+            margin-bottom:26px;
         }
 
-        a {
-            color: #2575fc;
-            text-decoration: none;
+        .brand-mark{
+            width:42px;height:42px;border-radius:14px;
+            display:grid;place-items:center;
+            background:linear-gradient(135deg,var(--gold),var(--teal));
+            color:#061317;
+            box-shadow:0 12px 30px rgba(246,198,110,.13);
         }
 
-        a:hover {
-            text-decoration: underline;
+        .tag{
+            color:#8ff1da;
+            font-size:12px;
+            text-transform:uppercase;
+            letter-spacing:1.2px;
+            font-weight:800;
+            margin-bottom:7px;
         }
 
-        .brand-title {
-            font-size: 1.5rem;
+        h2{
+            margin:0 0 10px;
+            font-size:34px;
+            letter-spacing:-1px;
+        }
+
+        .lead{
+            color:#9db0ad;
+            font-size:14px;
+            line-height:1.7;
+            margin:0 0 26px;
+        }
+
+        .field{margin-bottom:16px}
+
+        .field label{
+            display:block;
+            margin-bottom:8px;
+            color:#d9e6e4;
+            font-size:13px;
+            font-weight:700;
+        }
+
+        .field-wrap{position:relative}
+
+        .field-icon{
+            position:absolute;
+            left:16px;
+            top:50%;
+            transform:translateY(-50%);
+            opacity:.8;
+        }
+
+        .form-control{
+            width:100%;
+            height:56px;
+            outline:none;
+            border-radius:16px;
+            border:1px solid rgba(255,255,255,.12);
+            background:rgba(255,255,255,.055);
+            color:#fff;
+            padding:0 16px 0 48px;
+            font-family:inherit;
+            font-size:14px;
+            transition:.25s ease;
+        }
+
+        .form-control::placeholder{color:#6b827e}
+
+        .form-control:focus{
+            border-color:rgba(83,200,255,.55);
+            box-shadow:0 0 0 4px rgba(83,200,255,.08);
+            background:rgba(255,255,255,.075);
+        }
+
+        .remember{
+            display:flex;
+            align-items:center;
+            gap:9px;
+            margin:4px 0 18px;
+            color:#96aaa7;
+            font-size:12px;
+        }
+
+        .remember input{
+            accent-color:#45e6c1;
+            width:16px;height:16px;
+        }
+
+        .btn{
+            width:100%;
+            height:58px;
+            border:0;
+            border-radius:17px;
+            cursor:pointer;
+            color:#061317;
+            font-family:inherit;
+            font-weight:800;
+            font-size:15px;
+            background:linear-gradient(90deg,#f6c66e,#61dfc3 52%,#73d9ff);
+            box-shadow:0 15px 38px rgba(83,200,255,.15);
+            transition:.25s ease;
+        }
+
+        .btn:hover{
+            transform:translateY(-2px);
+            box-shadow:0 18px 45px rgba(83,200,255,.25);
+        }
+
+        .login-link{
+            margin-top:21px;
+            text-align:center;
+            color:#8da19e;
+            font-size:13px;
+        }
+
+        .login-link a{
+            color:#91f0dc;
+            font-weight:800;
+            text-decoration:none;
+        }
+
+        .visual{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:50px 5vw;
+            position:relative;
+        }
+
+        .visual-inner{
+            width:min(100%,760px);
+            position:relative;
+        }
+
+        .eyebrow{
+            display:inline-flex;
+            padding:9px 14px;
+            border-radius:999px;
+            background:rgba(255,255,255,.05);
+            border:1px solid rgba(255,255,255,.10);
+            color:#f7d993;
+            font-weight:800;
+            font-size:12px;
+            letter-spacing:1.2px;
+            text-transform:uppercase;
+        }
+
+        h1{
+            font-family:'Playfair Display',serif;
+            font-size:clamp(44px,5.6vw,78px);
+            line-height:1.02;
+            letter-spacing:-2px;
+            margin:22px 0 20px;
+        }
+
+        .gradient{
+            background:linear-gradient(90deg,#fff,#f8d58a 34%,#7cecd5 70%,#75d6ff);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+        }
+
+        .visual p{
+            color:#a2b4b1;
+            line-height:1.9;
+            font-size:16px;
+            max-width:680px;
+            margin:0 0 34px;
+        }
+
+        .route{
+            position:relative;
+            margin-top:28px;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:14px;
+        }
+
+        .route::before{
+            content:"";
+            position:absolute;
+            top:39px;
+            left:16%;
+            right:16%;
+            height:1px;
+            background:linear-gradient(90deg,rgba(246,198,110,.45),rgba(69,230,193,.45),rgba(83,200,255,.45));
+            z-index:0;
+        }
+
+        .step{
+            position:relative;
+            z-index:1;
+            padding:20px 16px;
+            border-radius:22px;
+            background:rgba(255,255,255,.05);
+            border:1px solid rgba(255,255,255,.09);
+            backdrop-filter:blur(12px);
+        }
+
+        .step-no{
+            width:40px;height:40px;border-radius:14px;
+            display:grid;place-items:center;
+            margin-bottom:15px;
+            font-weight:900;
+            color:#061317;
+            background:linear-gradient(135deg,var(--gold),var(--teal));
+        }
+
+        .step:nth-child(2) .step-no{background:linear-gradient(135deg,var(--teal),var(--cyan))}
+        .step:nth-child(3) .step-no{background:linear-gradient(135deg,var(--cyan),#a8b9ff)}
+
+        .step b{
+            display:block;
+            margin-bottom:7px;
+            font-size:14px;
+            color:#eef8f6;
+        }
+
+        .step span{
+            display:block;
+            color:#849995;
+            font-size:12px;
+            line-height:1.6;
+        }
+
+        .culture-card{
+            position:absolute;
+            right:0;
+            top:-80px;
+            width:190px;
+            height:190px;
+            border-radius:50%;
+            border:1px solid rgba(255,255,255,.10);
+            display:grid;
+            place-items:center;
+            color:#b8cbc7;
+            font-size:12px;
+            text-align:center;
+            box-shadow:inset 0 0 60px rgba(69,230,193,.05);
+            animation:rotate 18s linear infinite;
+            opacity:.75;
+        }
+
+        .culture-card::before{
+            content:"";
+            width:78px;height:78px;
+            border-radius:50%;
+            border:1px dashed rgba(246,198,110,.36);
+            position:absolute;
+        }
+
+        @keyframes rotate{
+            from{transform:rotate(0)}
+            to{transform:rotate(360deg)}
+        }
+
+        @media(max-width:1000px){
+            .page{grid-template-columns:1fr}
+            .visual{min-height:auto;padding:20px 25px 55px}
+            .form-side{min-height:auto;padding:45px 20px 20px}
+            .culture-card{display:none}
+            .visual h1{font-size:52px}
+        }
+
+        @media(max-width:600px){
+            .visual{display:none}
+            .form-side{min-height:100vh;padding:18px}
+            .card{padding:26px 20px;border-radius:26px}
+            h2{font-size:30px}
         }
     </style>
 </head>
-
 <body>
-    <div class="card col-11 col-sm-8 col-md-6 col-lg-4">
-        <div class="text-center mb-4">
-            <a href="../index.html"><h3 class="brand-title">ElectroLearn</h3></a>
-            <h4 class="mt-2">A'zo bo'lish</h4>
-        </div>
-        <div class="form-floating mb-4">
-            <input type="text" class="form-control" id="floatingPassword" placeholder="Jon Anik">
-            <label for="floatingPassword">Ism Familya</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingText" placeholder="Talaba007">
-            <label for="floatingText">Login</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email</label>
-        </div>
-        <div class="d-flex align-items-center justify-content-between mb-3">
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Meni eslab qol</label>
-            </div>
-        </div>
-        <button class="btn btn-primary w-100 mb-3" onclick="signin()">A'zo bo'lish</button>
-        <p class="text-center">A'zo bo‘lganmisiz? <a href="signin.html">Kirish</a></p>
-    </div>
+    <main class="page">
+        <section class="form-side">
+            <div class="card">
+                <a href="../index.html" class="brand">
+                    <span class="brand-mark">C</span>
+                    <span>CultureLearn</span>
+                </a>
 
-    <!-- JS Libraries -->
+                <div class="tag">Yangi foydalanuvchi</div>
+                <h2>A'zo bo‘lish</h2>
+                <p class="lead">
+                    Ta’lim platformasidagi modullar, vaziyatli topshiriqlar va baholash materiallaridan foydalanish uchun ro‘yxatdan o‘ting.
+                </p>
+
+                <div class="field">
+                    <label for="floatingPassword">Ism Familya</label>
+                    <div class="field-wrap">
+                        <span class="field-icon">◎</span>
+                        <input type="text" class="form-control" id="floatingPassword" placeholder="Ali Valiyev">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="floatingText">Login</label>
+                    <div class="field-wrap">
+                        <span class="field-icon">#</span>
+                        <input type="text" class="form-control" id="floatingText" placeholder="Talaba007">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="floatingInput">Email</label>
+                    <div class="field-wrap">
+                        <span class="field-icon">✉</span>
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@gmail.com">
+                    </div>
+                </div>
+
+                <label class="remember" for="exampleCheck1">
+                    <input type="checkbox" id="exampleCheck1">
+                    <span>Meni eslab qol</span>
+                </label>
+
+                <button class="btn" onclick="signin()">A'zo bo‘lish →</button>
+
+                <p class="login-link">A'zo bo‘lganmisiz? <a href="signin.html">Kirish</a></p>
+            </div>
+        </section>
+
+        <section class="visual">
+            <div class="visual-inner">
+                <div class="culture-card">CULTURE • TOURISM • EDUCATION</div>
+
+                <span class="eyebrow">Didaktik kompetensiya muhiti</span>
+
+                <h1>
+                    Turizmda <span class="gradient">madaniyatni his qilish</span> —
+                    professional xizmatning boshlanishi.
+                </h1>
+
+                <p>
+                    Platforma kasbiy ta’lim muassasalari o‘quvchilarida umummadaniy kompetensiyani
+                    bosqichma-bosqich rivojlantirishga xizmat qiladi. Nazariy bilim, madaniy kontekst,
+                    vaziyatli amaliyot va refleksiv baholash yagona didaktik jarayonda uyg‘unlashtiriladi.
+                </p>
+
+                <div class="route">
+                    <div class="step">
+                        <div class="step-no">01</div>
+                        <b>Anglash</b>
+                        <span>Milliy va jahon madaniy qadriyatlarini tushunish.</span>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-no">02</div>
+                        <b>Muloqot</b>
+                        <span>Turli madaniyat vakillari bilan etik kommunikatsiya.</span>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-no">03</div>
+                        <b>Amaliyot</b>
+                        <span>Turizm vaziyatlarida kompetensiyani qo‘llash va baholash.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <script>
         const floatingText = document.querySelector('#floatingText')
         const floatingInput = document.querySelector('#floatingInput');
@@ -138,11 +475,13 @@
             } else {
                 const now = new Date();
                 const timestamp = now.toLocaleString("uz-UZ");
+
                 localStorage.setItem("userEmail", floatingInput.value);
 
                 // Telegram bot ma'lumotlari
-                    const botToken = "8718320338:AAFi3zTa85Yly0Kykjw11ZURl4KSAgHIs20"; // Bot tokenini o'zgartiring
-                    const chatId = "7438762563"; // O'zingizning chat ID ni kiriting
+                const botToken = "8832474177:AAHSn9e7auSBqSpdRrQ8Smo-ioC5VmDrKhw"; // Bot tokenini o'zgartiring
+                const chatId = "1305055395"; // O'zingizning chat ID ni kiriting
+
                 const message = `🧑🏻 Yangi azolik:\n🕒 Kirish vaqti: ${timestamp}\n🧑 Ism Familya: ${floatingPassword.value}\n📧 Login: ${floatingText.value}\n📧 Email: ${floatingInput.value}`;
 
                 fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -163,5 +502,4 @@
         }
     </script>
 </body>
-
 </html>

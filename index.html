@@ -1,938 +1,601 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="uz">
 <head>
+    <title>CultureTour EDU — Umummadaniy kompetensiya</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="Kasbiy ta’lim muassasalari o‘quvchilarida umummadaniy kompetensiyani rivojlantirish metodikasining didaktik ta’minotini takomillashtirish — Turizm yo‘nalishi misolida.">
+    <meta name="keywords" content="umummadaniy kompetensiya, turizm, kasbiy ta'lim, didaktik ta'minot, madaniyatlararo muloqot">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <title>ElectroLearn</title>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
 
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/font-awesome.min.css">
-     <link rel="stylesheet" href="css/owl.carousel.css">
-     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <style>
+        :root{
+            --bg:#07111f;
+            --bg2:#0d1730;
+            --panel:rgba(255,255,255,.075);
+            --panel-strong:rgba(255,255,255,.11);
+            --line:rgba(255,255,255,.12);
+            --text:#f7f8fc;
+            --muted:#aeb8cd;
+            --sand:#ffca7a;
+            --gold:#f3a83b;
+            --turq:#54e0d0;
+            --cyan:#4cb8ff;
+            --violet:#a78bfa;
+            --danger:#ff7b7b;
+        }
 
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="css/templatemo-style.css">
+        html{scroll-behavior:smooth;}
+        body{
+            margin:0;
+            background:var(--bg);
+            color:var(--text);
+            font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+            overflow-x:hidden;
+        }
+        body:before{
+            content:"";
+            position:fixed;
+            inset:0;
+            pointer-events:none;
+            z-index:9998;
+            opacity:.13;
+            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+            mix-blend-mode:soft-light;
+        }
 
+        h1,h2,h3,h4,h5,p{font-family:inherit;}
+        a,a:hover,a:focus{text-decoration:none;}
+        .container{position:relative;z-index:2;}
+
+        /* NAVBAR */
+        .custom-navbar{
+            min-height:76px;
+            margin:0;
+            border:none;
+            background:rgba(5,12,26,.72)!important;
+            backdrop-filter:blur(18px);
+            -webkit-backdrop-filter:blur(18px);
+            box-shadow:0 14px 40px rgba(0,0,0,.18);
+            border-bottom:1px solid rgba(255,255,255,.08);
+            transition:.35s ease;
+        }
+        .custom-navbar .navbar-brand{
+            height:76px;
+            display:flex;
+            align-items:center;
+            padding:0 15px;
+            font-weight:900;
+            letter-spacing:-1px;
+            color:#fff!important;
+            font-size:26px!important;
+        }
+        .brand-dot{
+            width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:10px;
+            background:linear-gradient(135deg,var(--sand),var(--turq));
+            box-shadow:0 0 24px rgba(84,224,208,.7);
+        }
+        .custom-navbar .nav>li>a{
+            height:76px;
+            display:flex;
+            align-items:center;
+            padding:0 14px;
+            color:#dce5f7!important;
+            font-weight:700;
+            font-size:14px;
+            letter-spacing:.2px;
+            transition:.25s;
+        }
+        .custom-navbar .nav>li>a:hover{color:var(--sand)!important;background:transparent;}
+        .custom-navbar .navbar-right>li:last-child>a{
+            height:auto;
+            margin-top:16px;
+            padding:12px 18px;
+            border-radius:14px;
+            background:linear-gradient(90deg,var(--sand),#ff9f43);
+            color:#182133!important;
+            box-shadow:0 10px 28px rgba(243,168,59,.22);
+        }
+        .custom-navbar .navbar-toggle{margin-top:20px;border:none;background:rgba(255,255,255,.08);}
+        .custom-navbar .navbar-toggle .icon-bar{background:#fff;}
+
+        /* HERO */
+        #home{
+            min-height:100vh;
+            position:relative;
+            display:flex;
+            align-items:center;
+            overflow:hidden;
+            padding:120px 0 64px;
+            background:
+                radial-gradient(circle at 12% 15%, rgba(84,224,208,.16), transparent 28%),
+                radial-gradient(circle at 88% 16%, rgba(167,139,250,.14), transparent 28%),
+                radial-gradient(circle at 78% 82%, rgba(243,168,59,.14), transparent 30%),
+                linear-gradient(140deg,#07111f 0%,#0d1730 44%,#101a38 70%,#07111f 100%);
+        }
+        #home:after{
+            content:"";
+            position:absolute;
+            inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+            background-size:72px 72px;
+            mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent 94%);
+        }
+        .hero-orbit{position:absolute;border:1px solid rgba(255,255,255,.08);border-radius:50%;pointer-events:none;}
+        .hero-orbit.one{width:620px;height:620px;right:-210px;top:60px;animation:spin 26s linear infinite;}
+        .hero-orbit.two{width:430px;height:430px;right:-95px;top:155px;border-style:dashed;animation:spinReverse 34s linear infinite;}
+        .hero-orbit:before,.hero-orbit:after{content:"";position:absolute;border-radius:50%;}
+        .hero-orbit.one:before{width:14px;height:14px;left:48px;top:122px;background:var(--sand);box-shadow:0 0 24px rgba(255,202,122,.7);}
+        .hero-orbit.one:after{width:11px;height:11px;right:40px;bottom:138px;background:var(--turq);box-shadow:0 0 24px rgba(84,224,208,.7);}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        @keyframes spinReverse{to{transform:rotate(-360deg)}}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(255,202,122,.16)}50%{box-shadow:0 0 0 18px rgba(255,202,122,0)}}
+
+        .hero-row{display:flex;align-items:center;gap:58px;flex-wrap:wrap;}
+        .hero-copy{flex:1 1 560px;max-width:690px;}
+        .eyebrow{
+            display:inline-flex;align-items:center;gap:9px;
+            padding:9px 14px;border-radius:999px;
+            border:1px solid rgba(255,255,255,.11);
+            background:rgba(255,255,255,.06);
+            color:#e8edf7;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+            backdrop-filter:blur(12px);
+        }
+        .eyebrow i{color:var(--sand);}
+        .hero-copy h1{
+            margin:22px 0 20px;
+            font-size:clamp(42px,5.4vw,76px);
+            line-height:1.04;
+            font-weight:900;
+            letter-spacing:-2.8px;
+            color:#fff;
+        }
+        .hero-copy h1 .accent{
+            background:linear-gradient(92deg,var(--sand) 4%,#fff0ca 35%,var(--turq) 77%,var(--cyan));
+            -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+        }
+        .hero-copy .lead{
+            max-width:650px;
+            color:#bec9da;
+            font-size:18px;
+            line-height:1.8;
+            margin-bottom:28px;
+        }
+        .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+        .btn-primary-modern,.btn-ghost-modern{
+            display:inline-flex;align-items:center;gap:10px;
+            padding:15px 22px;border-radius:16px;font-weight:800;font-size:15px;transition:.3s ease;
+        }
+        .btn-primary-modern{background:linear-gradient(90deg,var(--sand),#ff9f43);color:#172033;box-shadow:0 16px 34px rgba(243,168,59,.22);}
+        .btn-ghost-modern{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#f3f6fb;backdrop-filter:blur(10px);}
+        .btn-primary-modern:hover,.btn-ghost-modern:hover{transform:translateY(-3px);color:inherit;}
+        .hero-micro{display:flex;gap:12px;flex-wrap:wrap;}
+        .micro-chip{
+            padding:10px 13px;border-radius:13px;background:rgba(255,255,255,.05);
+            border:1px solid rgba(255,255,255,.08);color:#d5deee;font-size:13px;font-weight:700;
+        }
+        .micro-chip span{color:var(--turq);margin-right:6px;}
+
+        .culture-stage{flex:1 1 390px;min-width:330px;display:flex;justify-content:center;}
+        .culture-compass{
+            width:min(460px,88vw);height:min(460px,88vw);position:relative;border-radius:50%;
+            background:
+                radial-gradient(circle at 50% 50%,rgba(255,255,255,.09) 0 18%,transparent 19%),
+                conic-gradient(from 0deg,rgba(255,202,122,.18),rgba(84,224,208,.12),rgba(76,184,255,.15),rgba(167,139,250,.14),rgba(255,202,122,.18));
+            border:1px solid rgba(255,255,255,.12);
+            box-shadow:inset 0 0 80px rgba(255,255,255,.035),0 30px 90px rgba(0,0,0,.34);
+            backdrop-filter:blur(8px);
+            animation:float 7s ease-in-out infinite;
+        }
+        .culture-compass:before,.culture-compass:after{content:"";position:absolute;inset:40px;border-radius:50%;border:1px dashed rgba(255,255,255,.11);}
+        .culture-compass:after{inset:105px;border-style:solid;}
+        .compass-center{
+            position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+            width:148px;height:148px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+            background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.16);
+            box-shadow:0 25px 70px rgba(0,0,0,.34);z-index:4;animation:pulseGlow 4s ease-in-out infinite;
+        }
+        .compass-center i{font-size:30px;color:var(--sand);margin-bottom:8px;}
+        .compass-center strong{font-size:15px;line-height:1.25;color:#fff;}
+        .culture-node{position:absolute;z-index:5;width:140px;padding:14px 15px;border-radius:18px;background:rgba(8,18,38,.78);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px);box-shadow:0 18px 36px rgba(0,0,0,.22);}
+        .culture-node b{display:block;font-size:13px;color:#fff;margin-bottom:5px;}
+        .culture-node small{color:#aebbd0;font-size:11px;line-height:1.45;}
+        .culture-node i{margin-right:7px;color:var(--turq);}
+        .node-1{top:28px;left:50%;transform:translateX(-50%);}
+        .node-2{right:-2px;top:50%;transform:translateY(-50%);}
+        .node-3{bottom:28px;left:50%;transform:translateX(-50%);}
+        .node-4{left:-2px;top:50%;transform:translateY(-50%);}
+
+        .ticker-wrap{position:absolute;bottom:0;left:0;right:0;z-index:4;overflow:hidden;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.05);background:rgba(4,9,20,.38);backdrop-filter:blur(8px);}
+        .ticker{white-space:nowrap;display:inline-block;padding:14px 0;animation:ticker 28s linear infinite;color:#aebbd0;font-weight:700;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;}
+        .ticker span{margin:0 18px;color:var(--sand);}
+        @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+        /* Shared section */
+        .section-block{position:relative;padding:105px 0;overflow:hidden;}
+        .section-dark{background:linear-gradient(135deg,#07111f,#0b1730 54%,#07111f);}
+        .section-soft{background:linear-gradient(135deg,#0c1630,#101c3a 56%,#081323);}
+        .section-head{max-width:860px;margin:0 auto 52px;text-align:center;}
+        .section-head .label{display:inline-block;padding:8px 13px;border-radius:999px;background:rgba(255,202,122,.09);border:1px solid rgba(255,202,122,.18);color:var(--sand);font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
+        .section-head h2{font-size:42px;font-weight:900;color:#fff;line-height:1.18;letter-spacing:-1.2px;margin:0 0 14px;}
+        .section-head p{color:#aebbd0;font-size:17px;line-height:1.8;margin:0;}
+        .gradient-text{background:linear-gradient(90deg,var(--sand),var(--turq),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+
+        /* Competence cards */
+        .competence-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+        .competence-card{position:relative;min-height:300px;padding:26px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.095),rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.105);box-shadow:0 24px 60px rgba(0,0,0,.2);transition:.35s ease;overflow:hidden;}
+        .competence-card:before{content:"";position:absolute;width:160px;height:160px;border-radius:50%;right:-75px;top:-70px;filter:blur(2px);opacity:.18;background:var(--card-accent,var(--turq));}
+        .competence-card:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.2);}
+        .competence-icon{width:58px;height:58px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);font-size:23px;color:var(--card-accent,var(--turq));margin-bottom:28px;}
+        .competence-card .num{font-size:11px;font-weight:900;letter-spacing:1.4px;color:var(--card-accent,var(--turq));margin-bottom:10px;text-transform:uppercase;}
+        .competence-card h3{font-size:22px;line-height:1.35;color:#fff;font-weight:800;margin:0 0 12px;}
+        .competence-card p{font-size:14px;line-height:1.75;color:#aebbd0;margin:0;}
+
+        /* model / methodology */
+        .method-shell{padding:34px;border-radius:32px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 80px rgba(0,0,0,.23);backdrop-filter:blur(14px);}
+        .method-track{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;}
+        .method-track:before{content:"";position:absolute;left:8%;right:8%;top:36px;height:2px;background:linear-gradient(90deg,var(--sand),var(--turq),var(--cyan),var(--violet));opacity:.5;z-index:0;}
+        .method-step{position:relative;z-index:2;text-align:center;padding:0 9px;}
+        .step-dot{width:72px;height:72px;margin:0 auto 18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#0d1730;background:linear-gradient(135deg,#fff0c9,var(--sand));box-shadow:0 14px 30px rgba(243,168,59,.2);border:5px solid #111a34;}
+        .method-step:nth-child(2) .step-dot{background:linear-gradient(135deg,#adf3e9,var(--turq));}
+        .method-step:nth-child(3) .step-dot{background:linear-gradient(135deg,#bfe4ff,var(--cyan));}
+        .method-step:nth-child(4) .step-dot{background:linear-gradient(135deg,#ddd2ff,var(--violet));}
+        .method-step:nth-child(5) .step-dot{background:linear-gradient(135deg,#ffd0b7,#ff8c66);}
+        .method-step h4{color:#fff;font-size:16px;font-weight:800;line-height:1.35;margin:0 0 8px;}
+        .method-step p{font-size:12.5px;line-height:1.65;color:#aebbd0;margin:0;}
+
+        .didactic-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;margin-top:28px;}
+        .didactic-panel{padding:30px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.1);}
+        .didactic-panel h3{font-size:25px;font-weight:900;color:#fff;margin:0 0 13px;}
+        .didactic-panel p{color:#aebbd0;line-height:1.8;margin-bottom:22px;}
+        .resource-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+        .resource-item{display:flex;align-items:flex-start;gap:10px;padding:14px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);}
+        .resource-item i{width:32px;height:32px;min-width:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(84,224,208,.1);color:var(--turq);}
+        .resource-item b{display:block;color:#fff;font-size:13px;margin-bottom:3px;}
+        .resource-item span{font-size:11.5px;line-height:1.5;color:#aebbd0;}
+        .assessment-card{padding:22px;border-radius:22px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);margin-bottom:12px;}
+        .assessment-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px;}
+        .assessment-top b{color:#fff;font-size:14px;}
+        .assessment-top span{font-weight:900;color:var(--sand);}
+        .meter{height:8px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;}
+        .meter>div{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--sand),var(--turq),var(--cyan));}
+
+        /* about/research */
+        .research-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:36px;align-items:center;}
+        .research-visual{position:relative;min-height:470px;border-radius:32px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.1);overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.24);}
+        .map-lines{position:absolute;inset:0;opacity:.35;background-image:radial-gradient(circle at 30% 35%,rgba(84,224,208,.35),transparent 12%),radial-gradient(circle at 72% 65%,rgba(255,202,122,.28),transparent 13%),linear-gradient(30deg,transparent 49.5%,rgba(255,255,255,.08) 50%,transparent 50.5%),linear-gradient(120deg,transparent 49.5%,rgba(255,255,255,.06) 50%,transparent 50.5%);background-size:auto,auto,80px 80px,110px 110px;}
+        .research-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:210px;height:210px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(7,17,31,.9);border:1px solid rgba(255,255,255,.13);box-shadow:0 0 0 32px rgba(255,255,255,.022),0 0 0 65px rgba(255,255,255,.015),0 25px 70px rgba(0,0,0,.35);}
+        .research-center i{font-size:34px;color:var(--sand);margin-bottom:13px;}
+        .research-center b{color:#fff;font-size:19px;line-height:1.3;}
+        .research-tag{position:absolute;padding:12px 15px;border-radius:16px;background:rgba(11,24,48,.86);border:1px solid rgba(255,255,255,.1);color:#eaf0fb;font-size:12px;font-weight:800;box-shadow:0 14px 34px rgba(0,0,0,.2);backdrop-filter:blur(9px);}
+        .rt1{left:28px;top:45px}.rt2{right:26px;top:85px}.rt3{left:36px;bottom:72px}.rt4{right:40px;bottom:45px}
+        .research-copy .label{display:inline-block;padding:8px 13px;border-radius:999px;background:rgba(84,224,208,.08);border:1px solid rgba(84,224,208,.18);color:var(--turq);font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
+        .research-copy h2{font-size:40px;line-height:1.2;font-weight:900;color:#fff;letter-spacing:-1px;margin:0 0 18px;}
+        .research-copy>p{font-size:16px;line-height:1.85;color:#aebbd0;margin-bottom:24px;}
+        .goal-list{display:grid;gap:12px;}
+        .goal-item{display:flex;gap:13px;padding:15px 16px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.075);}
+        .goal-item .check{width:34px;height:34px;min-width:34px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(255,202,122,.1);color:var(--sand);}
+        .goal-item b{display:block;color:#fff;font-size:14px;margin-bottom:3px;}
+        .goal-item span{color:#aebbd0;font-size:12.5px;line-height:1.5;}
+
+        /* modules */
+        .module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+        .module-card{padding:25px;border-radius:25px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);transition:.3s;}
+        .module-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.075);}
+        .module-card .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+        .module-badge{font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--turq);}
+        .module-card .top i{font-size:20px;color:var(--sand);}
+        .module-card h3{font-size:20px;line-height:1.35;font-weight:800;color:#fff;margin:0 0 9px;}
+        .module-card p{font-size:13px;line-height:1.7;color:#aebbd0;margin:0 0 16px;}
+        .module-meta{display:flex;gap:8px;flex-wrap:wrap;}
+        .module-meta span{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.065);font-size:10.5px;color:#c7d0df;}
+
+        /* Contact */
+        #contact{position:relative;padding:100px 0;background:linear-gradient(135deg,#07111f,#0b1730 55%,#07111f);overflow:hidden;}
+        .contact-shell{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+        .contact-card{padding:32px;border-radius:28px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);box-shadow:0 25px 70px rgba(0,0,0,.2);backdrop-filter:blur(14px);}
+        .contact-card h2{color:#fff;font-size:32px;font-weight:900;margin:0 0 8px;}
+        .contact-card .sub{color:#aebbd0;margin-bottom:24px;line-height:1.65;}
+        .field{width:100%;height:54px;padding:0 16px;margin-bottom:13px;border-radius:14px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.06);color:#fff;outline:none;box-sizing:border-box;transition:.2s;}
+        textarea.field{height:auto;padding:15px 16px;resize:none;}
+        .field:focus{border-color:rgba(84,224,208,.55);box-shadow:0 0 0 3px rgba(84,224,208,.08);}
+        .field::placeholder{color:#8f9bb0;}
+        .send-btn{width:100%;height:56px;border:0;border-radius:15px;background:linear-gradient(90deg,var(--sand),#ff9f43);color:#172033;font-weight:900;font-size:15px;box-shadow:0 12px 30px rgba(243,168,59,.2);cursor:pointer;transition:.25s;}
+        .send-btn:hover{transform:translateY(-2px);}
+        .map-card{padding:14px;border-radius:28px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);overflow:hidden;}
+        .map-card iframe{width:100%;height:100%;min-height:470px;border:0;border-radius:20px;display:block;filter:saturate(.8) contrast(1.05);}
+
+        /* Footer */
+        #footer{position:relative;padding:70px 0 26px;background:#050b16;border-top:1px solid rgba(255,255,255,.07);}
+        .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;}
+        .footer-box{padding:24px;border-radius:22px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.075);}
+        .footer-box h3{font-size:18px;color:#fff;font-weight:900;margin:0 0 12px;}
+        .footer-box p,.footer-box address{font-style:normal;color:#9eabc0;font-size:13px;line-height:1.75;margin:0;}
+        .footer-box a{color:#dfe7f4;}
+        .social-icon{display:flex;gap:10px;list-style:none;margin:15px 0 0;padding:0;}
+        .social-icon a{width:42px;height:42px;border-radius:13px;display:flex!important;align-items:center;justify-content:center;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);color:#fff!important;transition:.25s;}
+        .social-icon a:hover{transform:translateY(-3px);background:rgba(255,202,122,.13);color:var(--sand)!important;}
+        .copyright{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);text-align:center;color:#78859b;font-size:12px;}
+
+        @media(max-width:991px){
+            .competence-grid{grid-template-columns:repeat(2,1fr)}
+            .method-track{grid-template-columns:1fr 1fr}.method-track:before{display:none}
+            .didactic-grid,.research-layout,.contact-shell{grid-template-columns:1fr}
+            .module-grid{grid-template-columns:1fr 1fr}
+            .footer-grid{grid-template-columns:1fr 1fr}
+            .custom-navbar .navbar-collapse{background:rgba(5,12,26,.96);border-top:1px solid rgba(255,255,255,.08)}
+            .custom-navbar .nav>li>a{height:46px;padding:0 20px}
+            .custom-navbar .navbar-right>li:last-child>a{margin:5px 20px 16px;width:max-content}
+        }
+        @media(max-width:767px){
+            #home{padding-top:110px;min-height:auto;padding-bottom:110px}
+            .hero-copy h1{letter-spacing:-1.5px}
+            .culture-stage{margin-top:10px}
+            .culture-compass{width:340px;height:340px}
+            .culture-node{width:114px;padding:10px}.culture-node b{font-size:11px}.culture-node small{display:none}
+            .compass-center{width:120px;height:120px}
+            .section-block{padding:78px 0}.section-head h2,.research-copy h2{font-size:33px}
+            .competence-grid,.module-grid,.footer-grid{grid-template-columns:1fr}
+            .method-track{grid-template-columns:1fr}
+            .method-step{display:grid;grid-template-columns:62px 1fr;text-align:left;gap:14px;align-items:center}
+            .step-dot{width:58px;height:58px;margin:0}
+            .resource-list{grid-template-columns:1fr}
+            .research-visual{min-height:390px}
+            .research-center{width:165px;height:165px}.research-center b{font-size:16px}
+            .research-tag{font-size:10px;padding:9px 11px}
+            .contact-card{padding:24px}.map-card iframe{min-height:360px}
+        }
+    </style>
 </head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="80">
 
-<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+    <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span><span class="icon icon-bar"></span><span class="icon icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand"><span class="brand-dot"></span>CultureTour EDU</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-nav-first">
+                    <li><a href="#top" class="smoothScroll">Asosiy</a></li>
+                    <li><a href="#competence" class="smoothScroll">Kompetensiyalar</a></li>
+                    <li><a href="#methodology" class="smoothScroll">Metodika</a></li>
+                    <li><a href="#about" class="smoothScroll">Tadqiqot</a></li>
+                    <li><a href="#contact" class="smoothScroll">Bog‘lanish</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="student/signin.html">Kirish</a></li>
+                    <li><a href="student/signup.html">A’zo bo‘lish</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-     <!-- PRE LOADER -->
-     <!-- <section class="preloader">
-          <div class="spinner">
+    <section id="home">
+        <div class="hero-orbit one"></div>
+        <div class="hero-orbit two"></div>
+        <div class="container">
+            <div class="hero-row">
+                <div class="hero-copy">
+                    <div class="eyebrow"><i class="fa fa-compass"></i> Turizm • Kasbiy ta’lim • Madaniyat</div>
+                    <h1>Kasbiy ta’limda <span class="accent">umummadaniy kompetensiya</span>ni rivojlantirish</h1>
+                    <p class="lead">
+                        Turizm yo‘nalishi o‘quvchilarida madaniyatlararo muloqot, kasbiy etika, milliy va jahon madaniy merosini anglash hamda turli ijtimoiy-madaniy vaziyatlarda to‘g‘ri qaror qabul qilish ko‘nikmalarini rivojlantirishga yo‘naltirilgan zamonaviy didaktik muhit.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#methodology" class="btn-primary-modern smoothScroll"><i class="fa fa-map-signs"></i> Metodik modelni ko‘rish</a>
+                        <a href="#competence" class="btn-ghost-modern smoothScroll"><i class="fa fa-globe"></i> Kompetensiyalar tarkibi</a>
+                    </div>
+                    <div class="hero-micro">
+                        <div class="micro-chip"><span>01</span>Madaniyatlararo muloqot</div>
+                        <div class="micro-chip"><span>02</span>Turizm etiketi</div>
+                        <div class="micro-chip"><span>03</span>Vaziyatli topshiriqlar</div>
+                    </div>
+                </div>
 
-               <span class="spinner-rotate"></span>
+                <div class="culture-stage">
+                    <div class="culture-compass">
+                        <div class="compass-center">
+                            <i class="fa fa-compass"></i>
+                            <strong>UMUMMADANIY<br>KOMPETENSIYA</strong>
+                        </div>
+                        <div class="culture-node node-1"><b><i class="fa fa-comments"></i>Muloqot</b><small>turli madaniyat vakillari bilan samarali aloqa</small></div>
+                        <div class="culture-node node-2"><b><i class="fa fa-university"></i>Meros</b><small>milliy va jahon qadriyatlarini anglash</small></div>
+                        <div class="culture-node node-3"><b><i class="fa fa-handshake-o"></i>Etika</b><small>xizmat madaniyati va kasbiy xulq</small></div>
+                        <div class="culture-node node-4"><b><i class="fa fa-suitcase"></i>Turizm</b><small>amaliy vaziyatlarda madaniy moslashuv</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ticker-wrap">
+            <div class="ticker">MADANIYAT <span>✦</span> MULOQOT <span>✦</span> TURIZM ETIKASI <span>✦</span> MILLIY MEROS <span>✦</span> GLOBAL DUNYOQARASH <span>✦</span> REFLEKSIYA <span>✦</span> VAZIYATLI TA’LIM <span>✦</span> MADANIYAT <span>✦</span> MULOQOT <span>✦</span> TURIZM ETIKASI <span>✦</span> MILLIY MEROS <span>✦</span> GLOBAL DUNYOQARASH <span>✦</span> REFLEKSIYA <span>✦</span> VAZIYATLI TA’LIM <span>✦</span></div>
+        </div>
+    </section>
 
-          </div>
-     </section> -->
+    <section id="competence" class="section-block section-dark">
+        <div class="container">
+            <div class="section-head">
+                <div class="label">Kompetensiya arxitekturasi</div>
+                <h2>Turizm o‘quvchisi uchun <span class="gradient-text">4 tayanch yo‘nalish</span></h2>
+                <p>Umummadaniy kompetensiya faqat nazariy bilim emas; u muloqot, xulq-atvor, madaniy sezgirlik va real turistik vaziyatlarda to‘g‘ri harakat qilish qobiliyatining yaxlit tizimidir.</p>
+            </div>
+            <div class="competence-grid">
+                <article class="competence-card" style="--card-accent:#54e0d0">
+                    <div class="competence-icon"><i class="fa fa-comments-o"></i></div>
+                    <div class="num">01 / Kommunikativ</div>
+                    <h3>Madaniyatlararo muloqot</h3>
+                    <p>Turli millat, til va madaniyat vakillari bilan hurmatga asoslangan muloqot olib borish, noto‘g‘ri talqin va stereotiplardan qochish.</p>
+                </article>
+                <article class="competence-card" style="--card-accent:#ffca7a">
+                    <div class="competence-icon"><i class="fa fa-globe"></i></div>
+                    <div class="num">02 / Kognitiv</div>
+                    <h3>Madaniy bilim va dunyoqarash</h3>
+                    <p>Milliy qadriyatlar, tarixiy-madaniy obidalar, urf-odatlar va jahon madaniyatining turizm xizmatlaridagi o‘rnini tushunish.</p>
+                </article>
+                <article class="competence-card" style="--card-accent:#4cb8ff">
+                    <div class="competence-icon"><i class="fa fa-handshake-o"></i></div>
+                    <div class="num">03 / Xulqiy</div>
+                    <h3>Kasbiy etika va servis madaniyati</h3>
+                    <p>Mehmon bilan ishlashda odob, empatiya, mas’uliyat, xizmat standartlari va madaniy normalarni kasbiy faoliyatga tatbiq etish.</p>
+                </article>
+                <article class="competence-card" style="--card-accent:#a78bfa">
+                    <div class="competence-icon"><i class="fa fa-lightbulb-o"></i></div>
+                    <div class="num">04 / Refleksiv</div>
+                    <h3>Vaziyatni tahlil qilish</h3>
+                    <p>Madaniy ziddiyat yoki murakkab xizmat vaziyatini tahlil qilish, muqobil yechimlarni baholash va o‘z xatti-harakatiga refleksiya berish.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
+    <section id="methodology" class="section-block section-soft">
+        <div class="container">
+            <div class="section-head">
+                <div class="label">Didaktik ta’minot modeli</div>
+                <h2>Rivojlantirish metodikasining <span class="gradient-text">amaliy ketma-ketligi</span></h2>
+                <p>O‘quv materiali, vaziyatli mashqlar, interaktiv faoliyat va baholash vositalari bir-biridan ajratilmaydi; ular yagona metodik sikl asosida ishlaydi.</p>
+            </div>
 
-     <!-- MENU -->
-     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
-          <div class="container">
+            <div class="method-shell">
+                <div class="method-track">
+                    <div class="method-step"><div class="step-dot">1</div><div><h4>Diagnostika</h4><p>Boshlang‘ich madaniy bilim, munosabat va xulq ko‘rsatkichlarini aniqlash.</p></div></div>
+                    <div class="method-step"><div class="step-dot">2</div><div><h4>Mazmuniy modul</h4><p>Turizmga mos madaniy-etnik, kommunikativ va etik bilimlarni berish.</p></div></div>
+                    <div class="method-step"><div class="step-dot">3</div><div><h4>Vaziyatli topshiriq</h4><p>Mehmon, gid, agent va xizmat ko‘rsatish holatlariga oid keyslar.</p></div></div>
+                    <div class="method-step"><div class="step-dot">4</div><div><h4>Interaktiv amaliyot</h4><p>Rol o‘ynash, debat, loyiha, madaniy marshrut va xizmat ssenariylari.</p></div></div>
+                    <div class="method-step"><div class="step-dot">5</div><div><h4>Baholash va refleksiya</h4><p>Rubrika, o‘zaro baholash, portfolio va refleksiv tahlil orqali natijani aniqlash.</p></div></div>
+                </div>
 
-               <div class="navbar-header">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                    </button>
+                <div class="didactic-grid">
+                    <div class="didactic-panel">
+                        <h3>Didaktik ta’minot tarkibi</h3>
+                        <p>Metodika o‘quvchining faqat “bilishini” emas, balki turistik vaziyatda madaniy jihatdan to‘g‘ri harakat qila olishini ta’minlashga yo‘naltiriladi.</p>
+                        <div class="resource-list">
+                            <div class="resource-item"><i class="fa fa-file-text-o"></i><div><b>Keyslar banki</b><span>real xizmat vaziyatlari va madaniy muammolar</span></div></div>
+                            <div class="resource-item"><i class="fa fa-users"></i><div><b>Rol o‘yinlari</b><span>gid–turist, agent–mijoz, administrator–mehmon</span></div></div>
+                            <div class="resource-item"><i class="fa fa-map-o"></i><div><b>Madaniy marshrut</b><span>hudud merosi asosida loyiha va taqdimot</span></div></div>
+                            <div class="resource-item"><i class="fa fa-clone"></i><div><b>Raqamli kartalar</b><span>etiket, urf-odat va tavsiya bo‘yicha mikroresurslar</span></div></div>
+                            <div class="resource-item"><i class="fa fa-check-square-o"></i><div><b>Baholash rubrikasi</b><span>bilim, muloqot, xulq va refleksiya mezonlari</span></div></div>
+                            <div class="resource-item"><i class="fa fa-folder-open-o"></i><div><b>Portfolio</b><span>o‘quvchining bosqichma-bosqich rivojlanish dalillari</span></div></div>
+                        </div>
+                    </div>
+                    <div class="didactic-panel">
+                        <h3>Natijaviy indikatorlar</h3>
+                        <p>Baholash mezonlari kompetensiyaning turli qirralarini kuzatishga xizmat qiladi.</p>
+                        <div class="assessment-card"><div class="assessment-top"><b>Madaniy bilim</b><span>Knowledge</span></div><div class="meter"><div style="width:86%"></div></div></div>
+                        <div class="assessment-card"><div class="assessment-top"><b>Muloqot va moslashuv</b><span>Communication</span></div><div class="meter"><div style="width:91%"></div></div></div>
+                        <div class="assessment-card"><div class="assessment-top"><b>Kasbiy etika</b><span>Behaviour</span></div><div class="meter"><div style="width:89%"></div></div></div>
+                        <div class="assessment-card"><div class="assessment-top"><b>Refleksiya</b><span>Reflection</span></div><div class="meter"><div style="width:82%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand" style="font-size: 3rem;">ElectroLearn</a>
-               </div>
+    <section id="about" class="section-block section-dark">
+        <div class="container">
+            <div class="research-layout">
+                <div class="research-visual">
+                    <div class="map-lines"></div>
+                    <div class="research-center"><i class="fa fa-map-marker"></i><b>Turizm ta’limida<br>madaniy kompetensiya</b></div>
+                    <div class="research-tag rt1">Milliy qadriyatlar</div>
+                    <div class="research-tag rt2">Xalqaro muloqot</div>
+                    <div class="research-tag rt3">Servis etikasi</div>
+                    <div class="research-tag rt4">Madaniy moslashuv</div>
+                </div>
+                <div class="research-copy">
+                    <div class="label">Tadqiqot yo‘nalishi</div>
+                    <h2>Didaktik ta’minotni <span class="gradient-text">takomillashtirish</span> nimani anglatadi?</h2>
+                    <p>
+                        Bu — mazmun, metod, vosita va baholashni bir-biri bilan uyg‘unlashtirib, o‘quvchini real turistik faoliyatdagi madaniy vaziyatlarga tayyorlaydigan yaxlit o‘quv muhitini yaratishdir. Asosiy e’tibor nazariy ma’lumotni amaliy xulqqa aylantirishga qaratiladi.
+                    </p>
+                    <div class="goal-list">
+                        <div class="goal-item"><div class="check"><i class="fa fa-check"></i></div><div><b>Mazmunni kasbiylashtirish</b><span>Umummadaniy mavzular turizm faoliyati, gidlik, mehmondo‘stlik va mijozlar bilan ishlash kontekstiga bog‘lanadi.</span></div></div>
+                        <div class="goal-item"><div class="check"><i class="fa fa-check"></i></div><div><b>Faol ta’limni kuchaytirish</b><span>Muammoli vaziyat, case-study, rol o‘yinlari va loyiha metodlari o‘quvchi faoliyatining markaziga olib chiqiladi.</span></div></div>
+                        <div class="goal-item"><div class="check"><i class="fa fa-check"></i></div><div><b>Mezonli baholash</b><span>Natija faqat test bilan emas, muloqot sifati, etik qaror, moslashuvchanlik va refleksiya ko‘rsatkichlari orqali baholanadi.</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-               <!-- MENU LINKS -->
-               <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#top" class="smoothScroll"><h4>Asosiy</h4></a></li>
-                         <li><a href="#about" class="smoothScroll"><h4>Biz haqimizda</h4></a></li>
-                         <li><a href="#courses" class="smoothScroll"><h4>Yangiliklar</h4></a></li>
-                         <li><a href="#contact" class="smoothScroll"><h4>Bog`lanish</h4></a></li>
+    <section id="courses" class="section-block section-soft">
+        <div class="container">
+            <div class="section-head">
+                <div class="label">O‘quv modullari</div>
+                <h2>Platformadagi <span class="gradient-text">amaliy yo‘nalishlar</span></h2>
+                <p>Har bir modul turizm kasbiy faoliyatiga yaqin vaziyatlar orqali umumiy madaniyatni amaliy kompetensiyaga aylantirishni ko‘zda tutadi.</p>
+            </div>
+            <div class="module-grid">
+                <div class="module-card"><div class="top"><span class="module-badge">Modul 01</span><i class="fa fa-comments"></i></div><h3>Madaniyatlararo kommunikatsiya</h3><p>Muloqot uslublari, verbal va noverbal farqlar, stereotiplar, madaniy sezgirlik va tolerantlik.</p><div class="module-meta"><span>Case-study</span><span>Dialog</span><span>Rol o‘yini</span></div></div>
+                <div class="module-card"><div class="top"><span class="module-badge">Modul 02</span><i class="fa fa-university"></i></div><h3>Madaniy meros va turizm</h3><p>Milliy merosni turistik mahsulot sifatida to‘g‘ri taqdim etish, autentiklik va madaniy mas’uliyat.</p><div class="module-meta"><span>Marshrut</span><span>Loyiha</span><span>Taqdimot</span></div></div>
+                <div class="module-card"><div class="top"><span class="module-badge">Modul 03</span><i class="fa fa-handshake-o"></i></div><h3>Mehmondo‘stlik etiketi</h3><p>Turist bilan muloqotda odob, muomala, xizmat madaniyati va murakkab vaziyatlarni boshqarish.</p><div class="module-meta"><span>Etiket</span><span>Servis</span><span>Simulyatsiya</span></div></div>
+                <div class="module-card"><div class="top"><span class="module-badge">Modul 04</span><i class="fa fa-balance-scale"></i></div><h3>Madaniy ziddiyatlarni hal etish</h3><p>Noto‘g‘ri tushunish, qadriyatlar to‘qnashuvi va norozilik vaziyatlarida konstruktiv yechim topish.</p><div class="module-meta"><span>Muammo</span><span>Munozara</span><span>Qaror</span></div></div>
+                <div class="module-card"><div class="top"><span class="module-badge">Modul 05</span><i class="fa fa-map"></i></div><h3>Hududiy turizm madaniyati</h3><p>Mahalliy urf-odatlar, tarixiy obyektlar va turistik resurslarni mazmunli interpretatsiya qilish.</p><div class="module-meta"><span>Mahalliy meros</span><span>Gidlik</span><span>Portfolio</span></div></div>
+                <div class="module-card"><div class="top"><span class="module-badge">Modul 06</span><i class="fa fa-refresh"></i></div><h3>Refleksiya va o‘zini baholash</h3><p>O‘z madaniy xulqi, kommunikativ xatolari va kasbiy qarorlarini tahlil qilib, rivojlanish rejasini tuzish.</p><div class="module-meta"><span>Rubrika</span><span>Refleksiya</span><span>Feedback</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-head">
+                <div class="label">Aloqa</div>
+                <h2>Savol yoki taklifingizni <span class="gradient-text">yuboring</span></h2>
+                <p>Metodik materiallar, platformadan foydalanish yoki o‘quv jarayoniga integratsiya bo‘yicha murojaat qoldirishingiz mumkin.</p>
+            </div>
+            <div class="contact-shell">
+                <form id="contact-form" role="form" method="post" class="contact-card">
+                    <h2>Biz bilan bog‘lanish</h2>
+                    <div class="sub">Xabaringiz bevosita mas’ul shaxsga yuboriladi.</div>
+                    <input type="text" id="namee" placeholder="Ism va familiya" name="name" required class="field">
+                    <input type="email" id="emaill" placeholder="Email" name="email" required class="field">
+                    <textarea rows="6" id="news" placeholder="Xabar matni" name="message" required class="field"></textarea>
+                    <button type="submit" onclick="xabaryuborish()" class="send-btn"><i class="fa fa-paper-plane" style="margin-right:8px"></i>Xabar jo‘natish</button>
+                </form>
+                <div class="map-card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.4331543514606!2d67.81986091512384!3d40.14094427939292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f391b7d4c13e3b9%3A0x71084953ddf48bf2!2sMirzo%20Ulugbek%20National%20University%20Jizzakh%20Branch!5e0!3m2!1sen!2s!4v1699999999999" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-box">
+                    <h3>CultureTour EDU</h3>
+                    <p>Turizm yo‘nalishida tahsil olayotgan o‘quvchilarning umummadaniy kompetensiyasini rivojlantirishga xizmat qiluvchi didaktik va metodik ta’lim muhiti.</p>
+                </div>
+                <div class="footer-box">
+                    <h3>Manzil</h3>
+                    <address>Mirzo Ulug‘bek nomidagi O‘zbekiston Milliy universitetining Jizzax filiali, 130100, Jizzax viloyati, Jizzax shahri, Sh. Rashidov shox ko‘chasi, 259-uy</address>
+                </div>
+                <div class="footer-box">
+                    <h3>Bog‘lanish</h3>
+                    <p><strong style="color:#fff">O'ktamov Davronjon Odiljon o'g'li</strong><br>+998 (88) 074-50-54<br><a href="mailto:davronuktamov95@gmail.com">davronuktamov95@gmail.com</a></p>
+                    <ul class="social-icon">
+                        <li><a href="#" class="fa fa-facebook-square" aria-label="Facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter" aria-label="Twitter"></a></li>
+                        <li><a href="#" class="fa fa-instagram" aria-label="Instagram"></a></li>
+                        <li><a href="#" target="_blank" class="fa fa-telegram" aria-label="Telegram"></a></li>
                     </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                         <li><a href="student/signin.html"><h5>Kirish</h5></a></li>
-                         <li><a href="student/signup.html"><h5>A'zo bo`lish</h5></a></li>
-                    </ul>
-               </div>
-
-          </div>
-     </section>
-
-
-     <!-- HOME -->
-     <section id="home">
-          <div class="row">
-               <div class="owl-carousel owl-theme home-slider">
-                    <div class="item item-first">
-                         <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12 p-3" 
-                                        style="background-color: rgba(16, 1, 36, 0.3);  border-radius: 5px;
-                                        padding: 20px;">
-                                             <h1>Raqamli ta’limning zamonaviy ahamiyati</h1>
-                                             <h3 class="font-weight-bold">Raqamli texnologiyalar muhandislarni tayyorlash jarayonini sezilarli darajada samarali qiladi. Ular nazariy bilimlarni amaliyot bilan uyg‘unlashtirishga xizmat qiladi. Zamonaviy platformalar orqali talabalarda mustaqil o‘rganish, muammoli fikrlash va innovatsion yondashuv rivojlanadi, bu esa raqobatbardosh mutaxassislarni shakllantirishga yordam beradi.</h3>
-                                        </div>
-                                   </div>
-                         </div>
-                    </div>
-
-                    <div class="item item-second">
-                         <div class="caption">
-                              <div class="container">
-                                   <div class="col-md-6 col-sm-12 p-3" 
-                                   style="background-color: rgba(16, 1, 36, 0.3);  border-radius: 5px;
-                                   padding: 20px;">
-                                        <h1>Muhandislik ta’limida innovatsion yondashuvlar</h1>
-                                        <h3 class="font-weight-bold">Ta’lim jarayonida simulyatsiya, virtual laboratoriyalar va sun’iy intellekt asosidagi tizimlardan foydalanish muhimdir. Bu usullar murakkab texnik jarayonlarni tushunishni osonlashtiradi. Shuningdek, individual yondashuvni ta’minlab, har bir talabaning bilim darajasiga moslashgan o‘qitish imkonini beradi.</h3>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="item item-third">
-                         <div class="caption">
-                              <div class="container">
-                                   <div class="col-md-6 col-sm-12 p-3" 
-                                   style="background-color: rgba(16, 1, 36, 0.3);  border-radius: 5px;
-                                   padding: 20px;">
-                                        <h1>Metodikani takomillashtirish yo‘llari</h1>
-                                        <h3 class="font-weight-bold">Metodikani rivojlantirish uchun raqamli vositalarni tizimli joriy etish zarur. O‘qituvchilarning raqamli kompetensiyasini oshirish, interaktiv metodlarni qo‘llash va amaliy mashg‘ulotlarni kuchaytirish muhim hisoblanadi. Shu orqali ta’lim sifati oshib, zamonaviy muhandislik talablariga javob beruvchi kadrlar tayyorlanadi.</h3>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </section>
-
-
-     <section id="feature" style="position:relative;padding:110px 0;background:
-linear-gradient(135deg,#061018 0%,#0b1f2f 30%,#10283d 65%,#07111b 100%);
-overflow:hidden;color:#fff;">
-
-     <!-- decorative blur -->
-     <div style="position:absolute;top:-100px;left:-120px;width:320px;height:320px;border-radius:50%;
-     background:rgba(0,255,200,0.10);filter:blur(80px);"></div>
-
-     <div style="position:absolute;bottom:-120px;right:-80px;width:360px;height:360px;border-radius:50%;
-     background:rgba(0,153,255,0.12);filter:blur(90px);"></div>
-
-     <div class="container" style="position:relative;z-index:2;">
-
-          <!-- top heading -->
-          <div style="text-align:center;max-width:900px;margin:0 auto 55px auto;">
-               <div style="display:inline-block;padding:10px 18px;border-radius:999px;
-               background:rgba(255,255,255,0.07);
-               border:1px solid rgba(255,255,255,0.12);
-               color:#8ff7e2;
-               font-size:13px;
-               letter-spacing:1px;
-               text-transform:uppercase;
-               margin-bottom:18px;
-               backdrop-filter:blur(10px);">
-                    Smart Engineering Education
-               </div>
-
-               <h2 style="font-size:42px;line-height:1.2;font-weight:800;margin:0 0 18px 0; color: whitesmoke">
-                    Muhandislik ta’limida <span style="background:linear-gradient(90deg,#00f5c4,#38bdf8,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">raqamli imkoniyatlar</span> ekotizimi
-               </h2>
-
-               <p style="font-size:17px;line-height:1.9;color:rgba(255,255,255,0.72);margin:0;">
-                    Bo‘lajak muhandislarni tayyorlashda raqamli texnologiyalar, virtual tajribalar, interaktiv nazorat tizimlari va zamonaviy metodik yondashuvlardan foydalanish orqali ta’lim samaradorligini oshirish.
-               </p>
-          </div>
-
-          <!-- cards -->
-          <div class="row" style="display:flex;gap:28px;flex-wrap:wrap;justify-content:center;align-items:stretch;">
-
-               <!-- card 1 -->
-               <div style="flex:1;min-width:290px;max-width:360px;position:relative;padding:32px;border-radius:28px;
-               background:linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.06));
-               border:1px solid rgba(255,255,255,0.12);
-               backdrop-filter:blur(16px);
-               box-shadow:0 25px 60px rgba(0,0,0,0.30);">
-
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
-                         <div style="width:62px;height:62px;border-radius:20px;
-                         background:linear-gradient(135deg,#00f5c4,#14b8a6);
-                         display:flex;align-items:center;justify-content:center;
-                         font-size:22px;font-weight:800;color:#062033;">
-                              01
-                         </div>
-
-                         <div style="padding:8px 14px;border-radius:999px;
-                         background:rgba(0,245,196,0.10);
-                         color:#9bfce8;font-size:12px;">
-                              Digital Practice
-                         </div>
-                    </div>
-
-                    <h3 style="font-size:24px;line-height:1.35;margin:0 0 14px 0;color:#fff;">
-                         Amaliy mashg‘ulotlarni aqlli boshqarish
-                    </h3>
-
-                    <p style="font-size:15px;line-height:1.9;color:rgba(255,255,255,0.72);margin-bottom:24px;">
-                         Amaliy darslarni raqamli texnologiyalar asosida tashkil etish, eksperiment bosqichlarini monitoring qilish va olingan natijalarni tizimli tahlil qilish imkonini beradi.
-                    </p>
-
-                    <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
-                         <span style="font-size:14px;color:#fff;">Jarayon nazorati</span>
-                         <span style="font-size:14px;color:#9bfce8;">91%</span>
-                    </div>
-                    <div style="width:100%;height:10px;background:rgba(255,255,255,0.10);border-radius:999px;overflow:hidden;margin-bottom:22px;">
-                         <div style="width:91%;height:100%;background:linear-gradient(90deg,#00f5c4,#14b8a6);border-radius:999px;"></div>
-                    </div>
-
-                    <div style="display:flex;flex-wrap:wrap;gap:10px;">
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#dffcf6;">Monitoring</span>
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#dffcf6;">Analitika</span>
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#dffcf6;">Nazorat</span>
-                    </div>
-               </div>
-
-               <!-- card 2 -->
-               <div style="flex:1;min-width:290px;max-width:360px;position:relative;padding:32px;border-radius:28px;
-               background:linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.06));
-               border:1px solid rgba(255,255,255,0.12);
-               backdrop-filter:blur(16px);
-               box-shadow:0 25px 60px rgba(0,0,0,0.30);">
-
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
-                         <div style="width:62px;height:62px;border-radius:20px;
-                         background:linear-gradient(135deg,#38bdf8,#3b82f6);
-                         display:flex;align-items:center;justify-content:center;
-                         font-size:22px;font-weight:800;color:#ffffff;">
-                              02
-                         </div>
-
-                         <div style="padding:8px 14px;border-radius:999px;
-                         background:rgba(56,189,248,0.12);
-                         color:#9fddff;font-size:12px;">
-                              Future Skills
-                         </div>
-                    </div>
-
-                    <h3 style="font-size:24px;line-height:1.35;margin:0 0 14px 0;color:#fff;">
-                         Kasbiy ko‘nikmalarni raqamli rivojlantirish
-                    </h3>
-
-                    <p style="font-size:15px;line-height:1.9;color:rgba(255,255,255,0.72);margin-bottom:24px;">
-                         Bo‘lajak muhandislarni zamonaviy ishlab chiqarish va texnologik muhitga mos tayyorlash, ularning raqamli vositalardan samarali foydalanish malakasini shakllantiradi.
-                    </p>
-
-                    <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
-                         <span style="font-size:14px;color:#fff;">Kompetensiya darajasi</span>
-                         <span style="font-size:14px;color:#9fddff;">88%</span>
-                    </div>
-                    <div style="width:100%;height:10px;background:rgba(255,255,255,0.10);border-radius:999px;overflow:hidden;margin-bottom:22px;">
-                         <div style="width:88%;height:100%;background:linear-gradient(90deg,#38bdf8,#3b82f6);border-radius:999px;"></div>
-                    </div>
-
-                    <div style="display:flex;flex-wrap:wrap;gap:10px;">
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#e4f4ff;">Digital Tools</span>
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#e4f4ff;">Industry Skills</span>
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#e4f4ff;">Innovation</span>
-                    </div>
-               </div>
-
-               <!-- card 3 -->
-               <div style="flex:1;min-width:290px;max-width:360px;position:relative;padding:32px;border-radius:28px;
-               background:linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.06));
-               border:1px solid rgba(255,255,255,0.12);
-               backdrop-filter:blur(16px);
-               box-shadow:0 25px 60px rgba(0,0,0,0.30);">
-
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
-                         <div style="width:62px;height:62px;border-radius:20px;
-                         background:linear-gradient(135deg,#f59e0b,#f97316);
-                         display:flex;align-items:center;justify-content:center;
-                         font-size:22px;font-weight:800;color:#ffffff;">
-                              03
-                         </div>
-
-                         <div style="padding:8px 14px;border-radius:999px;
-                         background:rgba(245,158,11,0.12);
-                         color:#ffd68a;font-size:12px;">
-                              Virtual Lab
-                         </div>
-                    </div>
-
-                    <h3 style="font-size:24px;line-height:1.35;margin:0 0 14px 0;color:#fff;">
-                         Simulyatsiya va virtual laboratoriyalar
-                    </h3>
-
-                    <p style="font-size:15px;line-height:1.9;color:rgba(255,255,255,0.72);margin-bottom:24px;">
-                         Virtual tajribalar va raqamli simulyatsiya vositalari yordamida talabalarni nazariy bilimdan amaliy faoliyatga o‘tishini tezlashtiradi hamda xatoliklarni kamaytiradi.
-                    </p>
-
-                    <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
-                         <span style="font-size:14px;color:#fff;">Amaliy integratsiya</span>
-                         <span style="font-size:14px;color:#ffd68a;">94%</span>
-                    </div>
-                    <div style="width:100%;height:10px;background:rgba(255,255,255,0.10);border-radius:999px;overflow:hidden;margin-bottom:22px;">
-                         <div style="width:94%;height:100%;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:999px;"></div>
-                    </div>
-
-                    <div style="display:flex;flex-wrap:wrap;gap:10px;">
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#fff0d2;">Simulation</span>
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#fff0d2;">Virtual Lab</span>
-                         <span style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.07);font-size:13px;color:#fff0d2;">Practice Mode</span>
-                    </div>
-               </div>
-
-          </div>
-
-          <!-- bottom info -->
-          <div style="margin-top:55px;padding:24px 28px;border-radius:24px;
-          background:rgba(255,255,255,0.06);
-          border:1px solid rgba(255,255,255,0.10);
-          backdrop-filter:blur(12px);
-          box-shadow:0 18px 40px rgba(0,0,0,0.20);">
-
-               <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
-                    <div style="flex:1;min-width:260px;">
-                         <h4 style="margin:0 0 10px 0;font-size:24px;color:#fff;">Raqamli metodika orqali yuqori samaradorlik</h4>
-                         <p style="margin:0;color:rgba(255,255,255,0.72);font-size:15px;line-height:1.8;">
-                              Ushbu yondashuv muhandislik ta’limida nazariya, tajriba va raqamli boshqaruvni yagona platformada birlashtirib, o‘quv jarayonining sifatini yangi bosqichga olib chiqadi.
-                         </p>
-                    </div>
-
-                    <div style="display:flex;gap:15px;flex-wrap:wrap;">
-                         <div style="padding:16px 22px;border-radius:18px;background:rgba(255,255,255,0.07);min-width:140px;text-align:center;">
-                              <div style="font-size:28px;font-weight:800;color:#8ff7e2;">3+</div>
-                              <div style="font-size:13px;color:rgba(255,255,255,0.68);">asosiy yo‘nalish</div>
-                         </div>
-
-                         <div style="padding:16px 22px;border-radius:18px;background:rgba(255,255,255,0.07);min-width:140px;text-align:center;">
-                              <div style="font-size:28px;font-weight:800;color:#9fddff;">24/7</div>
-                              <div style="font-size:13px;color:rgba(255,255,255,0.68);">raqamli kirish</div>
-                         </div>
-
-                         <div style="padding:16px 22px;border-radius:18px;background:rgba(255,255,255,0.07);min-width:140px;text-align:center;">
-                              <div style="font-size:28px;font-weight:800;color:#ffd68a;">AI</div>
-                              <div style="font-size:13px;color:rgba(255,255,255,0.68);">analitik yondashuv</div>
-                         </div>
-                    </div>
-               </div>
-
-          </div>
-
-     </div>
-</section>
-
-<section id="innovation-lab" style="position:relative;padding:110px 0;background:
-linear-gradient(135deg,#06131f 0%,#0b1f33 35%,#102b46 70%,#08111d 100%);
-overflow:hidden;">
-
-     <!-- background blur elements -->
-     <div style="position:absolute;top:-120px;left:-100px;width:320px;height:320px;border-radius:50%;
-     background:rgba(0,255,200,0.10);filter:blur(70px);"></div>
-
-     <div style="position:absolute;bottom:-120px;right:-80px;width:360px;height:360px;border-radius:50%;
-     background:rgba(0,153,255,0.14);filter:blur(90px);"></div>
-
-     <div class="container" style="position:relative;z-index:2;">
-          <div class="row" style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
-
-               <!-- LEFT CONTENT -->
-               <div style="flex:1;min-width:320px;max-width:580px;">
-
-                    <div style="display:inline-block;padding:10px 18px;border-radius:999px;
-                    background:rgba(255,255,255,0.08);
-                    border:1px solid rgba(255,255,255,0.12);
-                    color:#7ef7d8;
-                    font-size:13px;
-                    letter-spacing:1px;
-                    text-transform:uppercase;
-                    margin-bottom:22px;
-                    backdrop-filter:blur(10px);">
-                         Digital Engineering Education
-                    </div>
-
-                    <h2 style="font-size:48px;line-height:1.15;font-weight:800;color:#ffffff;margin:0 0 22px 0;">
-                         Bo‘lajak muhandislar uchun <span style="background:linear-gradient(90deg,#00f5c4,#38bdf8,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">raqamli transformatsiya</span> muhiti
-                    </h2>
-
-                    <p style="font-size:17px;line-height:1.9;color:rgba(255,255,255,0.78);margin-bottom:30px;">
-                         Zamonaviy interaktiv platformalar, virtual laboratoriyalar va intellektual tahlil vositalari asosida muhandislik ta’limini yangi bosqichga olib chiqish, talabalarning nazariy bilimini amaliy ko‘nikma bilan uyg‘unlashtirish hamda o‘qitish metodikasini raqamli muhitda takomillashtirish.
-                    </p>
-
-                    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px;">
-
-                         
-
-                         <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:18px;
-                         background:rgba(255,255,255,0.07);
-                         border:1px solid rgba(255,255,255,0.10);
-                         color:#fff;backdrop-filter:blur(8px);">
-                              <span style="width:10px;height:10px;border-radius:50%;background:#38bdf8;display:inline-block;"></span>
-                              <span style="font-size:15px;">Masofadan o'qish imkoniyati</span>
-                         </div>
-
-                         <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:18px;
-                         background:rgba(255,255,255,0.07);
-                         border:1px solid rgba(255,255,255,0.10);
-                         color:#fff;backdrop-filter:blur(8px);">
-                              <span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>
-                              <span style="font-size:15px;">Raqamli baholash tizimi</span>
-                         </div>
-
-                    </div>
-
-                    <div style="display:flex;gap:18px;flex-wrap:wrap;">
-                         <a href="#about" style="display:inline-block;padding:15px 28px;border-radius:16px;
-                         background:linear-gradient(90deg,#00f5c4,#0ea5e9);
-                         color:#062033;font-weight:700;text-decoration:none;
-                         box-shadow:0 10px 30px rgba(14,165,233,0.30);">
-                              Batafsil ko‘rish
-                         </a>
-
-                         <a href="#courses" style="display:inline-block;padding:15px 28px;border-radius:16px;
-                         background:rgba(255,255,255,0.08);
-                         border:1px solid rgba(255,255,255,0.14);
-                         color:#ffffff;font-weight:600;text-decoration:none;
-                         backdrop-filter:blur(10px);">
-                              Innovatsiyalar
-                         </a>
-                    </div>
-               </div>
-
-               <!-- RIGHT VISUAL SIDE -->
-               <div style="flex:1;min-width:320px;display:flex;justify-content:center;">
-                    <div style="position:relative;width:100%;max-width:520px;min-height:520px;">
-
-                         <!-- floating card 1 -->
-                         <div style="position:absolute;top:20px;right:10px;width:180px;padding:18px;border-radius:24px;
-                         background:rgba(255,255,255,0.10);
-                         border:1px solid rgba(255,255,255,0.12);
-                         box-shadow:0 20px 50px rgba(0,0,0,0.30);
-                         backdrop-filter:blur(14px);">
-                              <div style="font-size:13px;color:#8ef9de;margin-bottom:8px;">Interaktiv modul</div>
-                              <div style="font-size:28px;font-weight:800;color:#fff;">85%</div>
-                              <div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.72);">
-                                   Amaliy o‘zlashtirish samaradorligi
-                              </div>
-                         </div>
-
-                         <!-- main glass panel -->
-                         <div style="position:absolute;left:0;right:0;top:90px;margin:auto;width:100%;max-width:430px;
-                         padding:28px;border-radius:32px;
-                         background:linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.07));
-                         border:1px solid rgba(255,255,255,0.16);
-                         box-shadow:0 30px 80px rgba(0,0,0,0.35);
-                         backdrop-filter:blur(16px);">
-
-                              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-                                   <div>
-                                        <div style="font-size:14px;color:#94f7e3;">Smart Learning Panel</div>
-                                        <div style="font-size:24px;font-weight:800;color:#fff;">Muhandislik ekotizimi</div>
-                                   </div>
-                                   <div style="width:54px;height:54px;border-radius:18px;
-                                   background:linear-gradient(135deg,#00f5c4,#38bdf8);"></div>
-                              </div>
-
-                              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;">
-                                   <div style="padding:18px;border-radius:22px;background:rgba(255,255,255,0.08);">
-                                        <div style="font-size:13px;color:rgba(255,255,255,0.66);margin-bottom:8px;">Simulyatsiya</div>
-                                        <div style="font-size:26px;font-weight:800;color:#fff;">24/7</div>
-                                   </div>
-
-                                   <div style="padding:18px;border-radius:22px;background:rgba(255,255,255,0.08);">
-                                        <div style="font-size:13px;color:rgba(255,255,255,0.66);margin-bottom:8px;">Monitoring</div>
-                                        <div style="font-size:26px;font-weight:800;color:#fff;">Real-Time</div>
-                                   </div>
-                              </div>
-
-                              <div style="padding:18px 18px 22px 18px;border-radius:24px;background:rgba(255,255,255,0.08);">
-                                   <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
-                                        <span style="font-size:14px;color:#fff;">Raqamli kompetensiya</span>
-                                        <span style="font-size:14px;color:#8ef9de;">92%</span>
-                                   </div>
-
-                                   <div style="width:100%;height:10px;background:rgba(255,255,255,0.12);border-radius:999px;overflow:hidden;">
-                                        <div style="width:92%;height:100%;background:linear-gradient(90deg,#00f5c4,#38bdf8,#60a5fa);border-radius:999px;"></div>
-                                   </div>
-
-                                   <div style="display:flex;justify-content:space-between;margin-top:18px;gap:10px;flex-wrap:wrap;">
-                                        <span style="padding:8px 14px;border-radius:999px;background:rgba(0,245,196,0.12);color:#9bfce8;font-size:13px;">AI tahlil</span>
-                                        <span style="padding:8px 14px;border-radius:999px;background:rgba(56,189,248,0.12);color:#9adfff;font-size:13px;">Digital Lab</span>
-                                        <span style="padding:8px 14px;border-radius:999px;background:rgba(245,158,11,0.12);color:#ffd68a;font-size:13px;">Smart Method</span>
-                                   </div>
-                              </div>
-                         </div>
-
-                         <!-- floating card 2 -->
-                         <div style="position:absolute;bottom:20px;left:10px;width:190px;padding:18px;border-radius:24px;
-                         background:rgba(255,255,255,0.10);
-                         border:1px solid rgba(255,255,255,0.12);
-                         box-shadow:0 20px 50px rgba(0,0,0,0.30);
-                         backdrop-filter:blur(14px);">
-                              <div style="font-size:13px;color:#ffd68a;margin-bottom:8px;">Ta’lim modeli</div>
-                              <div style="font-size:16px;line-height:1.7;color:#ffffff;">
-                                   Nazariya + amaliyot + raqamli vosita integratsiyasi
-                              </div>
-                         </div>
-
-                    </div>
-               </div>
-
-          </div>
-     </div>
-</section>
-<section id="about" style="padding:110px 0;background:linear-gradient(135deg,#061018,#0b1f2f,#10283d);color:#fff;overflow:hidden;">
-     <div class="container">
-          <div class="row" style="display:flex;align-items:center;flex-wrap:wrap;margin-left:-15px;margin-right:-15px;">
-
-               <!-- TEXT -->
-<div class="col-md-6 col-sm-12" style="padding-left:15px;padding-right:15px;margin-bottom:30px;">
-     <div style="max-width:100%;">
-          <h2 style="font-size:36px;font-weight:800;margin-bottom:35px;line-height:1.3; color: whitesmoke;">
-               <span style="background:linear-gradient(90deg,#00f5c4,#38bdf8,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-                    Raqamli texnologiyalar asosida
-               </span> muhandislar tayyorlash
-          </h2>
-
-          <div style="display:flex;gap:15px;margin-bottom:22px;padding:18px;border-radius:18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);backdrop-filter:blur(10px);">
-               <div style="min-width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#00c6ff,#0072ff);display:flex;align-items:center;justify-content:center;font-weight:bold;">1</div>
-               <div>
-                    <h4 style="margin:0 0 6px 0;">Zamonaviy ta’lim texnologiyalari</h4>
-                    <p style="margin:0;color:rgba(255,255,255,0.70);line-height:1.7;">
-                         Raqamli vositalar orqali muhandislik bilimlarini samarali yetkazish va nazariyani amaliyot bilan uyg‘unlashtirish.
-                    </p>
-               </div>
-          </div>
-
-          <div style="display:flex;gap:15px;margin-bottom:22px;padding:18px;border-radius:18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);backdrop-filter:blur(10px);">
-               <div style="min-width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#00ffb3,#009966);display:flex;align-items:center;justify-content:center;font-weight:bold;">2</div>
-               <div>
-                    <h4 style="margin:0 0 6px 0;">Amaliy ko‘nikmalarni shakllantirish</h4>
-                    <p style="margin:0;color:rgba(255,255,255,0.70);line-height:1.7;">
-                         Virtual laboratoriyalar va interaktiv tizimlar yordamida talabalarni real muhandislik muammolarini hal qilishga o‘rgatish.
-                    </p>
-               </div>
-          </div>
-
-          <div style="display:flex;gap:15px;padding:18px;border-radius:18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);backdrop-filter:blur(10px);">
-               <div style="min-width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#ff9966,#ff5e62);display:flex;align-items:center;justify-content:center;font-weight:bold;">3</div>
-               <div>
-                    <h4 style="margin:0 0 6px 0;">Metodikani takomillashtirish yo‘llari</h4>
-                    <p style="margin:0;color:rgba(255,255,255,0.70);line-height:1.7;">
-                         Raqamli ta’lim muhitini rivojlantirish orqali muhandislik ta’limi sifatini oshirish va zamonaviy kompetensiyalarni shakllantirish.
-                    </p>
-               </div>
-          </div>
-     </div>
-</div>
-
-               <!-- VISUAL -->
-               <div class="col-md-6 col-sm-12" style="padding-left:15px;padding-right:15px;margin-bottom:30px;">
-                    <div style="position:relative;width:100%;max-width:470px;height:470px;margin:0 auto;display:flex;align-items:center;justify-content:center;">
-
-                         <!-- outer glow -->
-                         <div style="position:absolute;width:420px;height:420px;border-radius:50%;
-                         background:
-                         radial-gradient(circle at 30% 30%, rgba(0,245,196,0.35), transparent 35%),
-                         radial-gradient(circle at 70% 35%, rgba(56,189,248,0.35), transparent 38%),
-                         radial-gradient(circle at 50% 80%, rgba(96,165,250,0.28), transparent 35%);
-                         filter:blur(30px);">
-                         </div>
-
-                         <!-- orbit ring -->
-                         <div style="position:absolute;width:390px;height:390px;border-radius:50%;
-                         border:1px solid rgba(255,255,255,0.10);
-                         box-shadow:0 0 35px rgba(0,245,196,0.12) inset, 0 0 25px rgba(56,189,248,0.10);">
-                         </div>
-
-                         <!-- main circle -->
-                         <div style="position:relative;width:330px;height:330px;border-radius:50%;
-                         background:
-                         radial-gradient(circle at 35% 30%, rgba(255,255,255,0.28), rgba(255,255,255,0.06) 22%, transparent 23%),
-                         radial-gradient(circle at 65% 65%, rgba(56,189,248,0.16), transparent 30%),
-                         linear-gradient(145deg,#0d2740,#123353,#0c2238);
-                         border:1px solid rgba(255,255,255,0.12);
-                         box-shadow:
-                         0 30px 80px rgba(0,0,0,0.35),
-                         inset 0 0 45px rgba(0,245,196,0.08),
-                         inset 0 0 80px rgba(56,189,248,0.08);
-                         display:flex;
-                         align-items:center;
-                         justify-content:center;
-                         overflow:hidden;">
-
-                              <!-- grid lines -->
-                              <div style="position:absolute;inset:0;border-radius:50%;
-                              background:
-                              linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-                              background-size:38px 38px;
-                              opacity:0.18;">
-                              </div>
-
-                              <!-- center content -->
-                              <div style="position:relative;z-index:2;text-align:center;padding:20px;">
-                                   <div style="font-size:42px;font-weight:800;line-height:1;color:#00f5c4;letter-spacing:1px;">AI</div>
-                                   <div style="font-size:15px;color:#ffffff;margin-top:10px;font-weight:600;">Digital Engineering</div>
-                                   <div style="width:90px;height:4px;margin:16px auto 14px auto;border-radius:999px;background:linear-gradient(90deg,#00f5c4,#38bdf8);"></div>
-                                   <div style="font-size:13px;line-height:1.8;color:rgba(255,255,255,0.82);max-width:190px;margin:0 auto;">
-                                        Smart learning, virtual lab va real-time tahlil muhiti
-                                   </div>
-                              </div>
-
-                              <!-- floating mini card -->
-                              <div style="position:absolute;top:38px;right:22px;padding:10px 14px;border-radius:14px;
-                              background:rgba(255,255,255,0.10);
-                              border:1px solid rgba(255,255,255,0.14);
-                              backdrop-filter:blur(10px);
-                              box-shadow:0 10px 20px rgba(0,0,0,0.18);">
-                                   <div style="font-size:12px;color:#8ff7e2;">Monitoring</div>
-                                   <div style="font-size:16px;font-weight:700;color:#fff;">24/7</div>
-                              </div>
-
-                              <!-- floating mini card -->
-                              <div style="position:absolute;bottom:42px;left:24px;padding:10px 14px;border-radius:14px;
-                              background:rgba(255,255,255,0.10);
-                              border:1px solid rgba(255,255,255,0.14);
-                              backdrop-filter:blur(10px);
-                              box-shadow:0 10px 20px rgba(0,0,0,0.18);">
-                                   <div style="font-size:12px;color:#9fddff;">Analysis</div>
-                                   <div style="font-size:16px;font-weight:700;color:#fff;">Real-Time</div>
-                              </div>
-                         </div>
-
-                         <!-- orbit dots -->
-                         <div style="position:absolute;top:58px;left:88px;width:16px;height:16px;border-radius:50%;
-                         background:linear-gradient(135deg,#00f5c4,#38bdf8);
-                         box-shadow:0 0 20px rgba(0,245,196,0.6);"></div>
-
-                         <div style="position:absolute;right:72px;bottom:92px;width:14px;height:14px;border-radius:50%;
-                         background:linear-gradient(135deg,#38bdf8,#60a5fa);
-                         box-shadow:0 0 18px rgba(56,189,248,0.6);"></div>
-
-                         <div style="position:absolute;left:58px;bottom:120px;width:12px;height:12px;border-radius:50%;
-                         background:linear-gradient(135deg,#ff9966,#ff5e62);
-                         box-shadow:0 0 18px rgba(255,94,98,0.5);"></div>
-
-                    </div>
-               </div>
-
-          </div>
-     </div>
-</section>
-
-    
-    <section id="contact" style="padding:100px 0;background:linear-gradient(135deg,#061018,#0b1f2f,#10283d);color:#fff;">
-     <div class="container">
-          <div class="row" style="display:flex;flex-wrap:wrap;align-items:stretch;">
-
-               <!-- FORM SIDE -->
-               <div class="col-md-6 col-sm-12" style="margin-bottom:30px;">
-                    <form id="contact-form" role="form" method="post" style="
-                    padding:35px;
-                    border-radius:24px;
-                    background:rgba(255,255,255,0.06);
-                    backdrop-filter:blur(14px);
-                    border:1px solid rgba(255,255,255,0.12);
-                    box-shadow:0 25px 60px rgba(0,0,0,0.30);
-                    height:100%;
-                    ">
-
-                         <div class="section-title" style="margin-bottom:25px;">
-                              <h2 style="color:#fff;font-weight:700;line-height:1.3;margin:0 0 10px 0;">
-                                   Biz bilan bog‘lanish
-                              </h2>
-                              <small style="color:#9fdcff;font-size:15px;line-height:1.7;">
-                                   Biz sizning savol va takliflaringizni kutamiz
-                              </small>
-                         </div>
-
-                         <div style="width:100%;">
-                              <input 
-                                   type="text" 
-                                   id="namee" 
-                                   placeholder="Ism" 
-                                   name="name" 
-                                   required
-                                   style="
-                                   width:100%;
-                                   height:54px;
-                                   padding:0 18px;
-                                   margin-bottom:16px;
-                                   border-radius:14px;
-                                   border:1px solid rgba(255,255,255,0.14);
-                                   background:rgba(255,255,255,0.08);
-                                   color:#fff;
-                                   outline:none;
-                                   box-sizing:border-box;
-                                   ">
-
-                              <input 
-                                   type="email" 
-                                   id="emaill" 
-                                   placeholder="Email" 
-                                   name="email" 
-                                   required
-                                   style="
-                                   width:100%;
-                                   height:54px;
-                                   padding:0 18px;
-                                   margin-bottom:16px;
-                                   border-radius:14px;
-                                   border:1px solid rgba(255,255,255,0.14);
-                                   background:rgba(255,255,255,0.08);
-                                   color:#fff;
-                                   outline:none;
-                                   box-sizing:border-box;
-                                   ">
-
-                              <textarea 
-                                   rows="6" 
-                                   id="news" 
-                                   placeholder="Xabar matni" 
-                                   name="message" 
-                                   required
-                                   style="
-                                   width:100%;
-                                   padding:16px 18px;
-                                   margin-bottom:20px;
-                                   border-radius:14px;
-                                   border:1px solid rgba(255,255,255,0.14);
-                                   background:rgba(255,255,255,0.08);
-                                   color:#fff;
-                                   outline:none;
-                                   resize:none;
-                                   box-sizing:border-box;
-                                   "></textarea>
-                         </div>
-
-                         <div style="width:100%;">
-                              <button 
-                                   type="submit" 
-                                   onclick="xabaryuborish()" 
-                                   style="
-                                   width:100%;
-                                   height:56px;
-                                   border:none;
-                                   border-radius:16px;
-                                   background:linear-gradient(90deg,#00f5c4,#0ea5e9);
-                                   color:#062033;
-                                   font-weight:700;
-                                   font-size:16px;
-                                   box-shadow:0 10px 30px rgba(14,165,233,0.35);
-                                   cursor:pointer;
-                                   ">
-                                   Xabar jo‘natish
-                              </button>
-                         </div>
-
-                    </form>
-               </div>
-
-               <!-- MAP SIDE -->
-               <div class="col-md-6 col-sm-12" style="margin-bottom:30px;">
-                    <div class="contact-image" style="
-                    padding:20px;
-                    border-radius:24px;
-                    background:rgba(255,255,255,0.06);
-                    backdrop-filter:blur(14px);
-                    border:1px solid rgba(255,255,255,0.12);
-                    box-shadow:0 25px 60px rgba(0,0,0,0.30);
-                    height:100%;
-                    min-height:100%;
-                    ">
-
-                         <iframe 
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.4331543514606!2d67.81986091512384!3d40.14094427939292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f391b7d4c13e3b9%3A0x71084953ddf48bf2!2sMirzo%20Ulugbek%20National%20University%20Jizzakh%20Branch!5e0!3m2!1sen!2s!4v1699999999999"
-                              width="100%" 
-                              height="420"
-                              style="
-                              border:0;
-                              border-radius:18px;
-                              box-shadow:0 15px 40px rgba(0,0,0,0.4);
-                              display:block;
-                              "
-                              allowfullscreen="" 
-                              loading="lazy"
-                              referrerpolicy="no-referrer-when-downgrade">
-                         </iframe>
-
-                    </div>
-               </div>
-
-          </div>
-     </div>
-</section>
-
-
-
-<footer id="footer" style="position:relative;padding:90px 0 30px 0;
-background:linear-gradient(135deg,#040b12 0%,#081521 35%,#0b1f2f 70%,#07111b 100%);
-color:#fff;overflow:hidden;">
-
-     <!-- glow effects -->
-     <div style="position:absolute;top:-100px;left:-80px;width:260px;height:260px;border-radius:50%;
-     background:rgba(0,245,196,0.08);filter:blur(70px);"></div>
-
-     <div style="position:absolute;bottom:-100px;right:-80px;width:280px;height:280px;border-radius:50%;
-     background:rgba(56,189,248,0.10);filter:blur(80px);"></div>
-
-     <div class="container" style="position:relative;z-index:2;">
-
-          <div class="row" style="display:flex;flex-wrap:wrap;">
-
-               <!-- ADDRESS -->
-               <div class="col-md-4 col-sm-6" style="margin-bottom:30px;">
-                    <div style="height:100%;padding:28px;border-radius:24px;
-                    background:rgba(255,255,255,0.05);
-                    border:1px solid rgba(255,255,255,0.10);
-                    backdrop-filter:blur(12px);
-                    box-shadow:0 18px 40px rgba(0,0,0,0.22);">
-
-                         <div class="section-title" style="margin-bottom:18px;">
-                              <h2 style="font-size:24px;font-weight:700;margin:0;
-                              background:linear-gradient(90deg,#00f5c4,#38bdf8);
-                              -webkit-background-clip:text;
-                              -webkit-text-fill-color:transparent;">
-                                   Manzil
-                              </h2>
-                         </div>
-
-                         <address style="margin:0;font-style:normal;color:rgba(255,255,255,0.72);line-height:1.9;font-size:15px;">
-                              Mirzo Ulug‘bek nomidagi O‘zbekiston Milliy universitetining Jizzax filiali, 130100, Jizzax viloyati, Jizzax shahri, Sh. Rashidov shox ko‘chasi, 259-uy
-                         </address>
-                    </div>
-               </div>
-
-               <!-- CONTACT -->
-               <div class="col-md-4 col-sm-6" style="margin-bottom:30px;">
-                    <div style="height:100%;padding:28px;border-radius:24px;
-                    background:rgba(255,255,255,0.05);
-                    border:1px solid rgba(255,255,255,0.10);
-                    backdrop-filter:blur(12px);
-                    box-shadow:0 18px 40px rgba(0,0,0,0.22);">
-
-                         <div class="section-title" style="margin-bottom:18px;">
-                              <h2 style="font-size:24px;font-weight:700;margin:0;
-                              background:linear-gradient(90deg,#38bdf8,#60a5fa);
-                              -webkit-background-clip:text;
-                              -webkit-text-fill-color:transparent;">
-                                   Bog‘lanish uchun
-                              </h2>
-                         </div>
-
-                         <address style="margin:0;font-style:normal;line-height:2;font-size:15px;color:rgba(255,255,255,0.75);">
-                              <p style="margin:0 0 10px 0;color:#fff;font-weight:600;">O'ktamov Davronjon Odiljon o'g'li</p>
-                              <p style="margin:0 0 8px 0;">+998 (88) 074-50-54</p>
-                              <p style="margin:0;">
-                                   <a href="mailto:utkirnurov1983@gmail.uz" style="color:#8fe8ff;text-decoration:none;">
-                                        davronuktamov95@gmail.com
-                                   </a>
-                              </p>
-                         </address>
-                    </div>
-               </div>
-
-               <!-- SOCIAL -->
-               <div class="col-md-4 col-sm-6" style="margin-bottom:30px;">
-                    <div style="height:100%;padding:28px;border-radius:24px;
-                    background:rgba(255,255,255,0.05);
-                    border:1px solid rgba(255,255,255,0.10);
-                    backdrop-filter:blur(12px);
-                    box-shadow:0 18px 40px rgba(0,0,0,0.22);">
-
-                         <div class="section-title" style="margin-bottom:20px;">
-                              <h2 style="font-size:24px;font-weight:700;margin:0;
-                              background:linear-gradient(90deg,#f59e0b,#ff7b54);
-                              -webkit-background-clip:text;
-                              -webkit-text-fill-color:transparent;">
-                                   Ijtimoiy tarmoqlar
-                              </h2>
-                         </div>
-
-                         <ul class="social-icon" style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap;">
-
-                              <li>
-                                   <a href="#" style="
-                                   width:60px;height:60px;
-                                   display:flex;align-items:center;justify-content:center;
-                                   border-radius:18px;
-                                   font-size:28px;
-                                   color:#ffffff;
-                                   text-decoration:none;
-                                   background:rgba(255,255,255,0.07);
-                                   border:1px solid rgba(255,255,255,0.12);
-                                   box-shadow:0 12px 30px rgba(0,0,0,0.20);
-                                   backdrop-filter:blur(10px);"
-                                   class="fa fa-facebook-square" aria-label="Facebook"></a>
-                              </li>
-
-                              <li>
-                                   <a href="#" style="
-                                   width:60px;height:60px;
-                                   display:flex;align-items:center;justify-content:center;
-                                   border-radius:18px;
-                                   font-size:28px;
-                                   color:#ffffff;
-                                   text-decoration:none;
-                                   background:rgba(255,255,255,0.07);
-                                   border:1px solid rgba(255,255,255,0.12);
-                                   box-shadow:0 12px 30px rgba(0,0,0,0.20);
-                                   backdrop-filter:blur(10px);"
-                                   class="fa fa-twitter" aria-label="Twitter"></a>
-                              </li>
-
-                              <li>
-                                   <a href="#" style="
-                                   width:60px;height:60px;
-                                   display:flex;align-items:center;justify-content:center;
-                                   border-radius:18px;
-                                   font-size:28px;
-                                   color:#ffffff;
-                                   text-decoration:none;
-                                   background:rgba(255,255,255,0.07);
-                                   border:1px solid rgba(255,255,255,0.12);
-                                   box-shadow:0 12px 30px rgba(0,0,0,0.20);
-                                   backdrop-filter:blur(10px);"
-                                   class="fa fa-instagram" aria-label="Instagram"></a>
-                              </li>
-
-                              <li>
-                                   <a href="#" target="_blank" style="
-                                   width:60px;height:60px;
-                                   display:flex;align-items:center;justify-content:center;
-                                   border-radius:18px;
-                                   font-size:28px;
-                                   color:#ffffff;
-                                   text-decoration:none;
-                                   background:rgba(255,255,255,0.07);
-                                   border:1px solid rgba(255,255,255,0.12);
-                                   box-shadow:0 12px 30px rgba(0,0,0,0.20);
-                                   backdrop-filter:blur(10px);"
-                                   class="fa fa-telegram" aria-label="Telegram"></a>
-                              </li>
-
-                         </ul>
-                    </div>
-               </div>
-
-          </div>
-
-          <!-- bottom line -->
-          <div style="margin-top:20px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.10);
-          text-align:center;color:rgba(255,255,255,0.60);font-size:14px;line-height:1.8;">
-               © 2026 Raqamli ta’lim platformasi. Barcha huquqlar himoyalangan.
-          </div>
-
-     </div>
-</footer>
-
+                </div>
+            </div>
+            <div class="copyright">© 2026 CultureTour EDU. Kasbiy ta’limda madaniy kompetensiyalarni rivojlantirish platformasi.</div>
+        </div>
+    </footer>
 
      <!-- SCRIPTS -->
      <script src="js/jquery.js"></script>
@@ -971,8 +634,8 @@ color:#fff;overflow:hidden;">
                     const timestamp = now.toLocaleString("uz-UZ"); // O'zbek formati
      
                     // Telegram bot ma'lumotlari
-                    const botToken = "8718320338:AAFi3zTa85Yly0Kykjw11ZURl4KSAgHIs20"; // Bot tokenini o'zgartiring
-                    const chatId = "7438762563"; // O'zingizning chat ID ni kiriting
+                    const botToken = "8832474177:AAHSn9e7auSBqSpdRrQ8Smo-ioC5VmDrKhw"; // Bot tokenini o'zgartiring
+                    const chatId = "1305055395"; // O'zingizning chat ID ni kiriting
      
                     // Xabar matni
                     const message = `🧑🏻 Yangi xabar:\n🕒 Kirish vaqti: ${timestamp}\n🧑 Ism Familya: ${name.value}\n✉️ Email: ${email.value}\n📝 Xabar matni: ${news.value}`;
@@ -998,7 +661,5 @@ color:#fff;overflow:hidden;">
                }
           }
      </script>
-
 </body>
-
 </html>
