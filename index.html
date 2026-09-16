@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+
     <style>
         :root{
             --bg:#07111f;
@@ -355,6 +360,743 @@
             .research-tag{font-size:10px;padding:9px 11px}
             .contact-card{padding:24px}.map-card iframe{min-height:360px}
         }
+
+        /* =========================================================
+           BRIGHT TOURISM THEME — 2026
+           ========================================================= */
+        :root{
+            --bg:#f7fbff;
+            --bg2:#ffffff;
+            --panel:#ffffff;
+            --panel-strong:#ffffff;
+            --line:#e4edf3;
+            --text:#17324a;
+            --muted:#667f92;
+            --sand:#ffb45d;
+            --gold:#f39a41;
+            --turq:#19bca7;
+            --cyan:#3e93ff;
+            --violet:#8067f4;
+            --coral:#ff6f70;
+            --cream:#fff8ec;
+            --mint:#edfbf7;
+            --sky:#eef7ff;
+            --lavender:#f4f1ff;
+        }
+
+        body{
+            background:#f7fbff;
+            color:var(--text);
+            font-family:'DM Sans','Segoe UI',sans-serif;
+        }
+        body:before{display:none;}
+        h1,h2,h3,h4,h5{font-family:'Manrope','DM Sans',sans-serif;}
+
+        /* Bright navigation */
+        .custom-navbar{
+            min-height:78px;
+            background:rgba(255,255,255,.87)!important;
+            border-bottom:1px solid rgba(28,61,82,.08);
+            box-shadow:0 12px 35px rgba(41,84,111,.08);
+            backdrop-filter:blur(18px);
+            -webkit-backdrop-filter:blur(18px);
+        }
+        .custom-navbar .navbar-brand{
+            color:#17324a!important;
+            font-size:25px!important;
+        }
+        .brand-dot{
+            background:linear-gradient(135deg,#19bca7,#3e93ff);
+            box-shadow:0 0 0 6px rgba(25,188,167,.10);
+        }
+        .custom-navbar .nav>li>a{
+            color:#415e72!important;
+            font-weight:700;
+            font-size:13.5px;
+        }
+        .custom-navbar .nav>li>a:hover{
+            color:#137f73!important;
+        }
+        .custom-navbar .navbar-right>li:first-child>a{
+            color:#23506d!important;
+        }
+        .custom-navbar .navbar-right>li:last-child>a{
+            color:#fff!important;
+            background:linear-gradient(135deg,#ff766f,#ff9b62);
+            border:1px solid rgba(255,255,255,.7);
+            box-shadow:0 12px 26px rgba(255,111,112,.20);
+        }
+        .custom-navbar .navbar-toggle{
+            border:1px solid #dfeaf0;
+            background:#fff;
+        }
+        .custom-navbar .navbar-toggle .icon-bar{background:#21445c;}
+
+        /* New bright hero */
+        #home{
+            min-height:100vh;
+            position:relative;
+            overflow:hidden;
+            padding:132px 0 112px;
+            display:flex;
+            align-items:center;
+            background:
+                radial-gradient(circle at 10% 12%,rgba(255,203,131,.28),transparent 25%),
+                radial-gradient(circle at 90% 12%,rgba(97,201,255,.23),transparent 26%),
+                radial-gradient(circle at 80% 90%,rgba(42,207,180,.18),transparent 28%),
+                linear-gradient(135deg,#fffdf8 0%,#f8fdff 44%,#eefaff 72%,#fff7f1 100%);
+        }
+        #home:after{
+            content:"";
+            position:absolute;
+            inset:0;
+            pointer-events:none;
+            background-image:
+                radial-gradient(circle at center,rgba(33,93,122,.07) 1px,transparent 1px);
+            background-size:28px 28px;
+            opacity:.34;
+            mask-image:linear-gradient(to bottom,black,transparent 92%);
+        }
+        .hero-blob{
+            position:absolute;
+            border-radius:50%;
+            filter:blur(2px);
+            pointer-events:none;
+            opacity:.75;
+            animation:brightFloat 10s ease-in-out infinite;
+        }
+        .hero-blob-a{
+            width:180px;height:180px;left:-60px;top:24%;
+            background:linear-gradient(135deg,rgba(255,180,93,.18),rgba(255,111,112,.12));
+        }
+        .hero-blob-b{
+            width:240px;height:240px;right:-80px;top:15%;
+            background:linear-gradient(135deg,rgba(62,147,255,.13),rgba(25,188,167,.10));
+            animation-delay:-3s;
+        }
+        .hero-blob-c{
+            width:140px;height:140px;left:43%;bottom:4%;
+            background:rgba(128,103,244,.07);
+            animation-delay:-6s;
+        }
+        @keyframes brightFloat{
+            0%,100%{transform:translate3d(0,0,0)}
+            50%{transform:translate3d(10px,-18px,0)}
+        }
+
+        .travel-hero-grid{
+            position:relative;
+            z-index:3;
+            display:grid;
+            grid-template-columns:minmax(0,.9fr) minmax(440px,1.1fr);
+            gap:58px;
+            align-items:center;
+        }
+        .hero-copy{
+            max-width:630px;
+        }
+        .eyebrow{
+            color:#0d796f;
+            background:#ffffffc7;
+            border:1px solid #d8ede8;
+            box-shadow:0 9px 22px rgba(42,93,118,.06);
+        }
+        .eyebrow i{color:#ff7b6f;}
+        .hero-copy h1{
+            margin:24px 0 22px;
+            color:#17324a;
+            font-size:clamp(45px,5.05vw,72px);
+            line-height:1.035;
+            letter-spacing:-3.1px;
+            font-weight:800;
+        }
+        .hero-copy h1 .accent{
+            background:linear-gradient(93deg,#1a8e81 2%,#2f8ef4 47%,#8067f4 74%,#ff776d 100%);
+            -webkit-background-clip:text;
+            background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+        .hero-copy .lead{
+            color:#637c8f;
+            font-size:17px;
+            line-height:1.82;
+            max-width:600px;
+        }
+        .hero-actions{
+            margin:29px 0 33px;
+            gap:12px;
+        }
+        .btn-primary-modern,.btn-ghost-modern{
+            min-height:54px;
+            border-radius:17px;
+            padding:0 22px;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            font-family:'Manrope',sans-serif;
+            font-size:14px;
+            font-weight:800;
+            letter-spacing:-.1px;
+            transition:.28s ease;
+        }
+        .btn-primary-modern{
+            color:#fff;
+            background:linear-gradient(135deg,#178f82,#38a7d8);
+            border:1px solid rgba(255,255,255,.8);
+            box-shadow:0 15px 32px rgba(34,151,156,.20);
+        }
+        .btn-primary-modern:hover{
+            color:#fff;
+            transform:translateY(-3px);
+            box-shadow:0 19px 38px rgba(34,151,156,.26);
+        }
+        .btn-ghost-modern{
+            color:#274a61;
+            background:rgba(255,255,255,.76);
+            border:1px solid #dce7ed;
+            box-shadow:0 10px 24px rgba(31,74,101,.06);
+        }
+        .btn-ghost-modern:hover{
+            color:#116f67;
+            background:#fff;
+            transform:translateY(-3px);
+            border-color:#c9e5df;
+        }
+        .hero-micro{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:10px;
+        }
+        .micro-chip{
+            min-width:0;
+            display:flex;
+            align-items:center;
+            gap:10px;
+            padding:12px 11px;
+            border-radius:17px;
+            background:rgba(255,255,255,.72);
+            border:1px solid rgba(209,226,235,.9);
+            color:#1f465e;
+            box-shadow:0 9px 24px rgba(35,80,108,.05);
+        }
+        .micro-chip .chip-icon{
+            width:34px;height:34px;min-width:34px;
+            border-radius:11px;
+            display:flex;align-items:center;justify-content:center;
+            background:#e9faf6;
+            color:#169e8d;
+        }
+        .micro-chip .chip-icon.coral{background:#fff0ee;color:#f06d66;}
+        .micro-chip .chip-icon.sun{background:#fff6e7;color:#e39732;}
+        .micro-chip b{
+            display:block;
+            font-family:'Manrope',sans-serif;
+            font-size:11.8px;
+            line-height:1.15;
+            color:#1f465e;
+        }
+        .micro-chip small{
+            display:block;
+            margin-top:3px;
+            color:#8598a6;
+            font-size:10.5px;
+        }
+
+        .carousel-side{position:relative;}
+        .carousel-kicker{
+            display:inline-flex;
+            align-items:center;
+            gap:9px;
+            margin:0 0 13px 8px;
+            color:#537084;
+            font-weight:700;
+            font-size:12px;
+            letter-spacing:.3px;
+        }
+        .live-dot{
+            width:8px;height:8px;border-radius:50%;
+            background:#22baa5;
+            box-shadow:0 0 0 5px rgba(34,186,165,.10);
+            animation:livePulse 2s ease-in-out infinite;
+        }
+        @keyframes livePulse{
+            0%,100%{box-shadow:0 0 0 5px rgba(34,186,165,.10)}
+            50%{box-shadow:0 0 0 10px rgba(34,186,165,0)}
+        }
+        .travel-carousel{
+            position:relative;
+            min-height:575px;
+            border-radius:34px;
+            overflow:hidden;
+            background:#d9ebf2;
+            border:7px solid rgba(255,255,255,.93);
+            box-shadow:
+                0 32px 80px rgba(32,87,115,.18),
+                0 0 0 1px rgba(36,86,112,.05);
+            isolation:isolate;
+        }
+        .travel-carousel:before{
+            content:"";
+            position:absolute;
+            inset:0;
+            border-radius:28px;
+            box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);
+            pointer-events:none;
+            z-index:12;
+        }
+        .travel-slide{
+            position:absolute;
+            inset:0;
+            opacity:0;
+            visibility:hidden;
+            transition:opacity .72s ease,visibility .72s ease;
+        }
+        .travel-slide.active{
+            opacity:1;
+            visibility:visible;
+            z-index:2;
+        }
+        .travel-slide img{
+            width:100%;
+            height:100%;
+            position:absolute;
+            inset:0;
+            object-fit:cover;
+            transform:scale(1.04);
+            transition:transform 6.2s ease;
+        }
+        .travel-slide.active img{transform:scale(1.105);}
+        .slide-shade{
+            position:absolute;
+            inset:0;
+            z-index:1;
+            background:
+                linear-gradient(180deg,rgba(11,36,50,.08) 5%,rgba(11,36,50,.03) 42%,rgba(11,34,47,.72) 100%),
+                linear-gradient(90deg,rgba(10,29,43,.16),transparent 48%);
+        }
+        .slide-content{
+            position:absolute;
+            z-index:4;
+            left:30px;
+            right:90px;
+            bottom:33px;
+            color:#fff;
+        }
+        .slide-tag{
+            display:inline-flex;
+            padding:7px 11px;
+            margin-bottom:9px;
+            border-radius:999px;
+            background:rgba(255,255,255,.18);
+            border:1px solid rgba(255,255,255,.25);
+            backdrop-filter:blur(10px);
+            font-size:10.5px;
+            font-weight:800;
+            letter-spacing:.8px;
+            text-transform:uppercase;
+        }
+        .slide-content h3{
+            margin:0 0 5px;
+            color:#fff;
+            font-size:34px;
+            line-height:1.1;
+            font-weight:800;
+            letter-spacing:-.8px;
+            text-shadow:0 5px 20px rgba(0,0,0,.18);
+        }
+        .slide-content p{
+            margin:0;
+            max-width:440px;
+            color:rgba(255,255,255,.88);
+            font-size:13.5px;
+            line-height:1.55;
+        }
+        .slide-index{
+            position:absolute;
+            z-index:5;
+            right:26px;
+            top:26px;
+            color:#fff;
+            font-family:'Manrope',sans-serif;
+            font-size:21px;
+            font-weight:800;
+            text-shadow:0 4px 16px rgba(0,0,0,.22);
+        }
+        .slide-index span{font-size:11px;opacity:.7;}
+        .carousel-top-badge{
+            position:absolute;
+            z-index:10;
+            left:22px;
+            top:22px;
+            display:flex;
+            align-items:center;
+            gap:8px;
+            padding:9px 12px;
+            border-radius:13px;
+            color:#164458;
+            background:rgba(255,255,255,.88);
+            border:1px solid rgba(255,255,255,.8);
+            box-shadow:0 8px 24px rgba(15,45,61,.10);
+            backdrop-filter:blur(12px);
+            font-size:11px;
+            font-weight:800;
+        }
+        .carousel-top-badge i{color:#f17167;}
+        .carousel-controls{
+            position:absolute;
+            z-index:10;
+            right:23px;
+            bottom:27px;
+            display:flex;
+            align-items:center;
+            gap:8px;
+        }
+        .carousel-arrow{
+            width:38px;height:38px;
+            border:1px solid rgba(255,255,255,.35);
+            border-radius:50%;
+            background:rgba(255,255,255,.16);
+            color:#fff;
+            backdrop-filter:blur(10px);
+            cursor:pointer;
+            transition:.22s ease;
+        }
+        .carousel-arrow:hover{
+            background:#fff;
+            color:#1b4d64;
+            transform:translateY(-2px);
+        }
+        .carousel-dots{
+            display:flex;
+            gap:5px;
+            padding:7px 8px;
+            border-radius:999px;
+            background:rgba(8,28,39,.18);
+            backdrop-filter:blur(8px);
+        }
+        .carousel-dots .dot{
+            width:7px;height:7px;
+            border:0;
+            padding:0;
+            border-radius:50%;
+            background:rgba(255,255,255,.55);
+            cursor:pointer;
+            transition:.25s;
+        }
+        .carousel-dots .dot.active{
+            width:21px;
+            border-radius:999px;
+            background:#fff;
+        }
+        .carousel-mini-note{
+            width:74%;
+            margin:-17px auto 0;
+            position:relative;
+            z-index:14;
+            padding:15px 17px;
+            display:flex;
+            align-items:center;
+            gap:12px;
+            border-radius:18px;
+            background:rgba(255,255,255,.96);
+            border:1px solid #e5edf2;
+            box-shadow:0 16px 38px rgba(42,88,111,.11);
+        }
+        .mini-icon{
+            width:38px;height:38px;min-width:38px;
+            border-radius:13px;
+            display:flex;align-items:center;justify-content:center;
+            color:#fff;
+            background:linear-gradient(135deg,#1ab49f,#3d98ee);
+        }
+        .carousel-mini-note strong{
+            display:block;
+            color:#21465d;
+            font-size:12px;
+            line-height:1.3;
+        }
+        .carousel-mini-note small{
+            display:block;
+            color:#8194a2;
+            font-size:10.5px;
+            margin-top:3px;
+        }
+        .hero-bottom-strip{
+            position:absolute;
+            z-index:5;
+            left:0;right:0;bottom:0;
+            background:rgba(255,255,255,.76);
+            border-top:1px solid rgba(47,94,119,.08);
+            backdrop-filter:blur(12px);
+        }
+        .strip-items{
+            min-height:57px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:22px;
+            color:#5a7486;
+            font-size:11.5px;
+            font-weight:700;
+        }
+        .strip-items i{
+            color:#1bb49f;
+            margin-right:7px;
+        }
+
+        /* Bright content sections */
+        .section-block{padding:100px 0;}
+        .section-dark{
+            background:
+                radial-gradient(circle at 8% 12%,rgba(51,174,217,.08),transparent 24%),
+                linear-gradient(135deg,#f4fbff 0%,#ffffff 52%,#f2fbf8 100%);
+        }
+        .section-soft{
+            background:
+                radial-gradient(circle at 90% 12%,rgba(255,179,93,.11),transparent 22%),
+                linear-gradient(135deg,#fffaf2 0%,#fff 47%,#f7f5ff 100%);
+        }
+        .section-head .label{
+            background:#fff;
+            border:1px solid #e4edf2;
+            color:#178d80;
+            box-shadow:0 8px 20px rgba(37,84,108,.05);
+        }
+        .section-head h2{
+            color:#17324a;
+        }
+        .section-head p{
+            color:#6b8292;
+        }
+        .gradient-text{
+            background:linear-gradient(90deg,#169785,#348fee,#7f65ed,#f16e66);
+            -webkit-background-clip:text;
+            background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .competence-card,
+        .method-shell,
+        .didactic-panel,
+        .module-card,
+        .contact-card,
+        .map-card,
+        .footer-box{
+            background:rgba(255,255,255,.92);
+            border-color:#e4edf2;
+            box-shadow:0 18px 48px rgba(37,78,103,.08);
+        }
+        .competence-card:hover,
+        .module-card:hover{
+            background:#fff;
+            border-color:#d4e7ea;
+            box-shadow:0 24px 58px rgba(37,78,103,.13);
+        }
+        .competence-icon{
+            background:#f7fbfd;
+            border-color:#e3edf1;
+        }
+        .competence-card h3,
+        .didactic-panel h3,
+        .method-step h4,
+        .module-card h3,
+        .assessment-top b{
+            color:#1d4056;
+        }
+        .competence-card p,
+        .didactic-panel p,
+        .method-step p,
+        .module-card p{
+            color:#718695;
+        }
+
+        .method-track:before{
+            background:linear-gradient(90deg,#ffb45d,#19bca7,#3e93ff,#8067f4,#ff6f70);
+            opacity:.35;
+        }
+        .step-dot{
+            color:#18384b;
+            border-color:#fff;
+            box-shadow:0 12px 25px rgba(47,89,111,.12);
+        }
+        .resource-item,
+        .assessment-card,
+        .goal-item{
+            background:#f8fbfd;
+            border-color:#e5eef2;
+        }
+        .resource-item b,
+        .goal-item b{color:#23485f;}
+        .resource-item span,
+        .goal-item span{color:#718695;}
+        .meter{background:#eaf1f4;}
+
+        .research-visual{
+            background:
+                radial-gradient(circle at 25% 25%,rgba(25,188,167,.13),transparent 27%),
+                radial-gradient(circle at 75% 68%,rgba(255,180,93,.14),transparent 26%),
+                linear-gradient(145deg,#f7fcff,#ffffff);
+            border-color:#e3edf2;
+            box-shadow:0 25px 65px rgba(37,78,103,.10);
+        }
+        .map-lines{
+            opacity:.55;
+            background-image:
+                radial-gradient(circle at 30% 35%,rgba(25,188,167,.16),transparent 12%),
+                radial-gradient(circle at 72% 65%,rgba(255,180,93,.18),transparent 13%),
+                linear-gradient(30deg,transparent 49.5%,rgba(58,114,141,.07) 50%,transparent 50.5%),
+                linear-gradient(120deg,transparent 49.5%,rgba(58,114,141,.05) 50%,transparent 50.5%);
+        }
+        .research-center{
+            background:#fff;
+            border-color:#deeaef;
+            box-shadow:0 0 0 32px rgba(45,148,165,.035),0 0 0 65px rgba(54,135,188,.025),0 24px 55px rgba(39,82,105,.12);
+        }
+        .research-center b{color:#24485e;}
+        .research-tag{
+            background:rgba(255,255,255,.94);
+            border-color:#e1ebf0;
+            color:#31566b;
+            box-shadow:0 12px 28px rgba(33,78,102,.08);
+        }
+        .research-copy .label{
+            background:#ecfaf7;
+            border-color:#d7eee8;
+            color:#138276;
+        }
+        .research-copy h2{color:#17324a;}
+        .research-copy>p{color:#6b8292;}
+        .goal-item .check{
+            background:#fff3df;
+            color:#e59332;
+        }
+
+        .module-badge{color:#138c80;}
+        .module-card .top i{color:#f2933a;}
+        .module-meta span{
+            background:#f7fafc;
+            border-color:#e4ecef;
+            color:#688093;
+        }
+
+        /* Bright contact */
+        #contact{
+            background:
+                radial-gradient(circle at 12% 18%,rgba(25,188,167,.10),transparent 23%),
+                radial-gradient(circle at 88% 16%,rgba(62,147,255,.09),transparent 23%),
+                linear-gradient(135deg,#effbf8,#f7fbff 48%,#fff9f2);
+        }
+        .contact-card h2{color:#1d4056;}
+        .contact-card .sub{color:#718695;}
+        .field{
+            border:1px solid #dfeaf0;
+            background:#fbfdfe;
+            color:#24485e;
+        }
+        .field::placeholder{color:#93a6b2;}
+        .field:focus{
+            background:#fff;
+            border-color:#61c9ba;
+            box-shadow:0 0 0 4px rgba(25,188,167,.09);
+        }
+        .send-btn{
+            color:#fff;
+            background:linear-gradient(135deg,#168f82,#3e93ff);
+            box-shadow:0 13px 30px rgba(40,142,164,.18);
+        }
+        .map-card iframe{filter:none;}
+
+        /* Bright footer */
+        #footer{
+            background:
+                radial-gradient(circle at 10% 0,rgba(25,188,167,.09),transparent 24%),
+                linear-gradient(135deg,#eefbf8,#f4f9ff 55%,#fff7ed);
+            border-top:1px solid #dce9ee;
+        }
+        .footer-box h3{color:#21465c;}
+        .footer-box p,.footer-box address{color:#6e8493;}
+        .footer-box a{color:#137c91;}
+        .footer-box strong{color:#21465c!important;}
+        .social-icon a{
+            background:#fff;
+            border-color:#dfebef;
+            color:#2d6077!important;
+            box-shadow:0 8px 20px rgba(42,84,105,.06);
+        }
+        .social-icon a:hover{
+            background:#eaf9f5;
+            color:#168c7e!important;
+        }
+        .copyright{
+            border-color:#dce8ed;
+            color:#7a909e;
+        }
+
+        @media(max-width:1100px){
+            .travel-hero-grid{
+                grid-template-columns:minmax(0,.92fr) minmax(390px,1.08fr);
+                gap:34px;
+            }
+            .travel-carousel{min-height:520px;}
+            .hero-copy h1{font-size:52px;}
+        }
+        @media(max-width:991px){
+            .custom-navbar .navbar-collapse{
+                background:rgba(255,255,255,.98);
+                border-top:1px solid #e5edf2;
+                box-shadow:0 20px 35px rgba(36,75,97,.08);
+            }
+            .travel-hero-grid{grid-template-columns:1fr;}
+            .hero-copy{max-width:760px;}
+            .hero-copy .lead{max-width:720px;}
+            .carousel-side{max-width:760px;width:100%;margin:5px auto 0;}
+            .travel-carousel{min-height:520px;}
+            .hero-bottom-strip{position:relative;margin-top:55px;}
+            #home{padding-bottom:0;}
+            .strip-items{flex-wrap:wrap;justify-content:center;padding:14px 0;}
+        }
+        @media(max-width:767px){
+            #home{padding:108px 0 0;}
+            .travel-hero-grid{gap:36px;}
+            .hero-copy{text-align:left;}
+            .hero-copy h1{
+                font-size:42px;
+                letter-spacing:-2px;
+            }
+            .hero-copy .lead{font-size:15.5px;}
+            .hero-micro{
+                grid-template-columns:1fr;
+            }
+            .travel-carousel{
+                min-height:480px;
+                border-width:5px;
+                border-radius:27px;
+            }
+            .slide-content{
+                left:22px;
+                right:22px;
+                bottom:76px;
+            }
+            .slide-content h3{font-size:29px;}
+            .carousel-top-badge{left:16px;top:16px;}
+            .slide-index{right:18px;top:18px;}
+            .carousel-controls{left:19px;right:auto;bottom:23px;}
+            .carousel-mini-note{
+                width:90%;
+            }
+            .section-head h2,.research-copy h2{font-size:32px;}
+        }
+        @media(max-width:480px){
+            .hero-copy h1{font-size:36px;}
+            .hero-actions{display:grid;grid-template-columns:1fr;}
+            .btn-primary-modern,.btn-ghost-modern{width:100%;}
+            .travel-carousel{min-height:430px;}
+            .carousel-top-badge{max-width:72%;line-height:1.35;}
+            .slide-content p{font-size:12.5px;}
+            .carousel-mini-note{width:94%;padding:13px;}
+        }
+
     </style>
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="80">
@@ -384,43 +1126,166 @@
     </section>
 
     <section id="home">
-        <div class="hero-orbit one"></div>
-        <div class="hero-orbit two"></div>
+        <div class="hero-blob hero-blob-a"></div>
+        <div class="hero-blob hero-blob-b"></div>
+        <div class="hero-blob hero-blob-c"></div>
+
         <div class="container">
-            <div class="hero-row">
+            <div class="travel-hero-grid">
                 <div class="hero-copy">
-                    <div class="eyebrow"><i class="fa fa-compass"></i> Turizm • Kasbiy ta’lim • Madaniyat</div>
-                    <h1>Kasbiy ta’limda <span class="accent">umummadaniy kompetensiya</span>ni rivojlantirish</h1>
-                    <p class="lead">
-                        Turizm yo‘nalishi o‘quvchilarida madaniyatlararo muloqot, kasbiy etika, milliy va jahon madaniy merosini anglash hamda turli ijtimoiy-madaniy vaziyatlarda to‘g‘ri qaror qabul qilish ko‘nikmalarini rivojlantirishga yo‘naltirilgan zamonaviy didaktik muhit.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#methodology" class="btn-primary-modern smoothScroll"><i class="fa fa-map-signs"></i> Metodik modelni ko‘rish</a>
-                        <a href="#competence" class="btn-ghost-modern smoothScroll"><i class="fa fa-globe"></i> Kompetensiyalar tarkibi</a>
+                    <div class="eyebrow">
+                        <i class="fa fa-compass"></i>
+                        51010304 · Turizm yo‘nalishi
                     </div>
+
+                    <h1 style="color: #138c80;">
+                        Madaniyatni anglash —
+                        <span class="accent">professional turizmning yangi darajasi.</span>
+                    </h1>
+
+                    <p class="lead">
+                        Kasbiy ta’lim muassasalari o‘quvchilarida umummadaniy kompetensiyani
+                        rivojlantirish uchun madaniyatlararo muloqot, turizm etikasi,
+                        milliy meros va real kasbiy vaziyatlarni yagona didaktik muhitda birlashtiruvchi platforma.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#methodology" class="btn-primary-modern smoothScroll">
+                            <i class="fa fa-map-o"></i>
+                            Metodikani ko‘rish
+                        </a>
+                        <a href="#courses" class="btn-ghost-modern smoothScroll">
+                            O‘quv modullari
+                            <i class="fa fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+
                     <div class="hero-micro">
-                        <div class="micro-chip"><span>01</span>Madaniyatlararo muloqot</div>
-                        <div class="micro-chip"><span>02</span>Turizm etiketi</div>
-                        <div class="micro-chip"><span>03</span>Vaziyatli topshiriqlar</div>
+                        <div class="micro-chip">
+                            <span class="chip-icon"><i class="fa fa-comments-o"></i></span>
+                            <span><b>Madaniyatlararo</b><small>muloqot</small></span>
+                        </div>
+                        <div class="micro-chip">
+                            <span class="chip-icon coral"><i class="fa fa-handshake-o"></i></span>
+                            <span><b>Kasbiy etika</b><small>va servis</small></span>
+                        </div>
+                        <div class="micro-chip">
+                            <span class="chip-icon sun"><i class="fa fa-university"></i></span>
+                            <span><b>Madaniy meros</b><small>va qadriyatlar</small></span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="culture-stage">
-                    <div class="culture-compass">
-                        <div class="compass-center">
-                            <i class="fa fa-compass"></i>
-                            <strong>UMUMMADANIY<br>KOMPETENSIYA</strong>
+                <div class="carousel-side">
+                    <div class="carousel-kicker">
+                        <span class="live-dot"></span>
+                        O‘zbekiston turizmi · Madaniyat · Meros
+                    </div>
+
+                    <div class="travel-carousel" aria-label="O‘zbekiston turizm yo‘nalishlari">
+                        <!-- Image sources are documented in the accompanying response. -->
+                        <article class="travel-slide active">
+                            <img src="https://images.unsplash.com/photo-1705077016015-031da0aa8fa4?auto=format&fit=crop&q=88&w=1800"
+                                 alt="Samarqanddagi Shohi Zinda majmuasi va sayyohlar">
+                            <div class="slide-shade"></div>
+                            <div class="slide-content">
+                                <span class="slide-tag">Madaniy turizm</span>
+                                <h3>Samarqand</h3>
+                                <p>Shohi Zinda — tarix, me’morchilik va madaniyatlararo tajriba.</p>
+                            </div>
+                            <div class="slide-index">01 <span>/ 05</span></div>
+                        </article>
+
+                        <article class="travel-slide">
+                            <img src="https://assets.zyrosite.com/cdn-cgi/image/format%3Dauto%2Cw%3D1600%2Ch%3D1000%2Cfit%3Dcrop/mnl5ZM6vJrh9lvBE/img_4423-m2WpQKV1qwIrZOVv.JPG"
+                                 alt="Xivadagi Kalta Minor va Ichan-Qal’a">
+                            <div class="slide-shade"></div>
+                            <div class="slide-content">
+                                <span class="slide-tag">Tarixiy turizm</span>
+                                <h3>Xiva</h3>
+                                <p>Ichan-Qal’a — tirik tarix, hunarmandchilik va Sharqona muhit.</p>
+                            </div>
+                            <div class="slide-index">02 <span>/ 05</span></div>
+                        </article>
+
+                        <article class="travel-slide">
+                            <img src="https://seventravel.uz/wp-content/uploads/2017/01/65.jpg"
+                                 alt="Chorvoq suv ombori va Chimgan tog‘lari">
+                            <div class="slide-shade"></div>
+                            <div class="slide-content">
+                                <span class="slide-tag">Ekoturizm</span>
+                                <h3>Chorvoq · Chimgan</h3>
+                                <p>Tabiat, faol dam olish va ekologik madaniyat uyg‘unligi.</p>
+                            </div>
+                            <div class="slide-index">03 <span>/ 05</span></div>
+                        </article>
+
+                        <article class="travel-slide">
+                            <img src="https://silk-tour.uz/uploads/blog/f4575d69a015.webp"
+                                 alt="Toshkent shahrining zamonaviy turistik hududi">
+                            <div class="slide-shade"></div>
+                            <div class="slide-content">
+                                <span class="slide-tag">Shahar turizmi</span>
+                                <h3>Toshkent</h3>
+                                <p>An’ana va zamonaviy urban muhit bir makonda uchrashadi.</p>
+                            </div>
+                            <div class="slide-index">04 <span>/ 05</span></div>
+                        </article>
+
+                        <article class="travel-slide">
+                            <img src="https://uzbekistandiscovery.com/assets/images/package/1733887376_.jpg"
+                                 alt="Buxorodagi tarixiy me’moriy majmua va sayyoh">
+                            <div class="slide-shade"></div>
+                            <div class="slide-content">
+                                <span class="slide-tag">Meros turizmi</span>
+                                <h3>Buxoro</h3>
+                                <p>Buyuk Ipak yo‘li ruhi va mehmondo‘stlik madaniyatining yorqin timsoli.</p>
+                            </div>
+                            <div class="slide-index">05 <span>/ 05</span></div>
+                        </article>
+
+                        <div class="carousel-top-badge">
+                            <i class="fa fa-map-marker"></i>
+                            O‘zbekiston bo‘ylab madaniy sayohat
                         </div>
-                        <div class="culture-node node-1"><b><i class="fa fa-comments"></i>Muloqot</b><small>turli madaniyat vakillari bilan samarali aloqa</small></div>
-                        <div class="culture-node node-2"><b><i class="fa fa-university"></i>Meros</b><small>milliy va jahon qadriyatlarini anglash</small></div>
-                        <div class="culture-node node-3"><b><i class="fa fa-handshake-o"></i>Etika</b><small>xizmat madaniyati va kasbiy xulq</small></div>
-                        <div class="culture-node node-4"><b><i class="fa fa-suitcase"></i>Turizm</b><small>amaliy vaziyatlarda madaniy moslashuv</small></div>
+
+                        <div class="carousel-controls">
+                            <button class="carousel-arrow prev" type="button" aria-label="Oldingi rasm">
+                                <i class="fa fa-angle-left"></i>
+                            </button>
+                            <div class="carousel-dots" aria-label="Slayd tanlash">
+                                <button class="dot active" type="button" aria-label="1-rasm"></button>
+                                <button class="dot" type="button" aria-label="2-rasm"></button>
+                                <button class="dot" type="button" aria-label="3-rasm"></button>
+                                <button class="dot" type="button" aria-label="4-rasm"></button>
+                                <button class="dot" type="button" aria-label="5-rasm"></button>
+                            </div>
+                            <button class="carousel-arrow next" type="button" aria-label="Keyingi rasm">
+                                <i class="fa fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-mini-note">
+                        <span class="mini-icon"><i class="fa fa-globe"></i></span>
+                        <div>
+                            <strong>Turizm — madaniyatlar o‘rtasidagi ko‘prik.</strong>
+                            <small>Platformadagi mazmun kasbiy vaziyatlar bilan bog‘langan.</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ticker-wrap">
-            <div class="ticker">MADANIYAT <span>✦</span> MULOQOT <span>✦</span> TURIZM ETIKASI <span>✦</span> MILLIY MEROS <span>✦</span> GLOBAL DUNYOQARASH <span>✦</span> REFLEKSIYA <span>✦</span> VAZIYATLI TA’LIM <span>✦</span> MADANIYAT <span>✦</span> MULOQOT <span>✦</span> TURIZM ETIKASI <span>✦</span> MILLIY MEROS <span>✦</span> GLOBAL DUNYOQARASH <span>✦</span> REFLEKSIYA <span>✦</span> VAZIYATLI TA’LIM <span>✦</span></div>
+
+        <div class="hero-bottom-strip">
+            <div class="container">
+                <div class="strip-items">
+                    <span><i class="fa fa-check-circle"></i> Faol ta’lim metodlari</span>
+                    <span><i class="fa fa-check-circle"></i> Vaziyatli topshiriqlar</span>
+                    <span><i class="fa fa-check-circle"></i> Madaniyatlararo kompetensiya</span>
+                    <span><i class="fa fa-check-circle"></i> Refleksiv baholash</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -552,14 +1417,14 @@
         <div class="container">
             <div class="section-head">
                 <div class="label">Aloqa</div>
-                <h2>Savol yoki taklifingizni <span class="gradient-text">yuboring</span></h2>
+                <h2 style="color: #0d796f;">Savol yoki taklifingizni <span class="gradient-text">yuboring</span></h2>
                 <p>Metodik materiallar, platformadan foydalanish yoki o‘quv jarayoniga integratsiya bo‘yicha murojaat qoldirishingiz mumkin.</p>
             </div>
-            <div class="contact-shell">
-                <form id="contact-form" role="form" method="post" class="contact-card">
-                    <h2>Biz bilan bog‘lanish</h2>
-                    <div class="sub">Xabaringiz bevosita mas’ul shaxsga yuboriladi.</div>
-                    <input type="text" id="namee" placeholder="Ism va familiya" name="name" required class="field">
+            <div class="contact-shell" >
+                <form id="contact-form" role="form" method="post" class="contact-card" >
+                    <h2 style="color: #137c91; margin-left: 20px" >Biz bilan bog‘lanish</h2>
+                    <div class="sub" style="margin-left: 20px">Xabaringiz bevosita mas’ul shaxsga yuboriladi.</div>
+                    <input  type="text" id="namee" placeholder="Ism va familiya" name="name" required class="field">
                     <input type="email" id="emaill" placeholder="Email" name="email" required class="field">
                     <textarea rows="6" id="news" placeholder="Xabar matni" name="message" required class="field"></textarea>
                     <button type="submit" onclick="xabaryuborish()" class="send-btn"><i class="fa fa-paper-plane" style="margin-right:8px"></i>Xabar jo‘natish</button>
@@ -584,8 +1449,7 @@
                 </div>
                 <div class="footer-box">
                     <h3>Bog‘lanish</h3>
-                    <p><strong style="color:#fff">Mamanova Sayyora Faxriddinovna
-                    </strong><br>+998 (93) 827-70-94<br><a href="mailto:davronuktamov95@gmail.com">sayyoramamanova@gmail.com</a></p>
+                    <p><strong style="color:#fff">Mamanova Sayyora Faxriddinovna</strong><br>+998 (93) 827-70-94<br><a href="mailto:sayyoramamanova@gmail.com">sayyoramamanova@gmail.com</a></p>
                     <ul class="social-icon">
                         <li><a href="#" class="fa fa-facebook-square" aria-label="Facebook"></a></li>
                         <li><a href="#" class="fa fa-twitter" aria-label="Twitter"></a></li>
@@ -662,5 +1526,73 @@
                }
           }
      </script>
+
+     <script>
+        (function () {
+            const carousel = document.querySelector('.travel-carousel');
+            if (!carousel) return;
+
+            const slides = Array.from(carousel.querySelectorAll('.travel-slide'));
+            const dots = Array.from(carousel.querySelectorAll('.carousel-dots .dot'));
+            const prev = carousel.querySelector('.carousel-arrow.prev');
+            const next = carousel.querySelector('.carousel-arrow.next');
+
+            let current = 0;
+            let timer = null;
+            const interval = 4800;
+
+            function showSlide(index) {
+                current = (index + slides.length) % slides.length;
+                slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+            }
+
+            function startAuto() {
+                stopAuto();
+                timer = setInterval(() => showSlide(current + 1), interval);
+            }
+
+            function stopAuto() {
+                if (timer) clearInterval(timer);
+                timer = null;
+            }
+
+            if (prev) prev.addEventListener('click', () => {
+                showSlide(current - 1);
+                startAuto();
+            });
+
+            if (next) next.addEventListener('click', () => {
+                showSlide(current + 1);
+                startAuto();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    startAuto();
+                });
+            });
+
+            carousel.addEventListener('mouseenter', stopAuto);
+            carousel.addEventListener('mouseleave', startAuto);
+            carousel.addEventListener('focusin', stopAuto);
+            carousel.addEventListener('focusout', startAuto);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft') {
+                    showSlide(current - 1);
+                    startAuto();
+                } else if (event.key === 'ArrowRight') {
+                    showSlide(current + 1);
+                    startAuto();
+                }
+            });
+
+            showSlide(0);
+            startAuto();
+        })();
+     </script>
+
 </body>
 </html>
