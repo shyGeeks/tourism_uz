@@ -1,311 +1,445 @@
 const testdata = [
   {
     id: 1,
-    question: "Elektr toki nima?",
+    question: "Madaniy meros tushunchasi eng to‘liq qaysi javobda ifodalangan?",
     options: [
-      "Zaryadlarning tartibsiz harakati",
-      "Elektr kuchlanishi",
-      "Magnit maydon",
-      "Zaryadlangan zarrachalarning yo‘nalgan harakati"
+      "Faqat tarixiy binolar majmui",
+      "Avloddan-avlodga o‘tuvchi moddiy va nomoddiy madaniy qadriyatlar majmui",
+      "Faqat muzey eksponatlari",
+      "Faqat xalq og‘zaki ijodi"
     ],
-    answer: "Zaryadlangan zarrachalarning yo‘nalgan harakati",
+    answer: "Avloddan-avlodga o‘tuvchi moddiy va nomoddiy madaniy qadriyatlar majmui",
   },
   {
     id: 2,
-    question: "Tok kuchi qaysi birlikda o‘lchanadi?",
-    options: ["Volt", "Om", "Amper", "Vatt"],
-    answer: "Amper",
+    question: "Nomoddiy madaniy merosga qaysi misol mos keladi?",
+    options: [
+      "Tarixiy madrasa",
+      "Arxeologik qazilma",
+      "An’anaviy marosim va og‘zaki ijod",
+      "Muzey binosi"
+    ],
+    answer: "An’anaviy marosim va og‘zaki ijod",
   },
   {
     id: 3,
-    question: "Ohm qonuni nimani ifodalaydi?",
+    question: "Madaniy meros turizmi mahsulotining markaziy elementi nima?",
     options: [
-      "Tok va magnit maydon bog‘liqligini",
-      "Kuchlanish va qarshilik bog‘liqligini",
-      "Tok, kuchlanish va qarshilik orasidagi bog‘liqlikni",
-      "Faqat tokni"
+      "Faqat transport",
+      "Madaniy qadriyat va uni talqin qilish tajribasi",
+      "Faqat reklama",
+      "Faqat ovqatlanish xizmati"
     ],
-    answer: "Tok, kuchlanish va qarshilik orasidagi bog‘liqlikni",
+    answer: "Madaniy qadriyat va uni talqin qilish tajribasi",
   },
   {
     id: 4,
-    question: "Qarshilikning o‘lchov birligi nima?",
-    options: ["Volt", "Om", "Amper", "Farad"],
-    answer: "Om",
+    question: "Turistik mahsulotni shakllantirishda qaysi omil madaniy mazmunni boyitadi?",
+    options: [
+      "Talqin va hikoyalash",
+      "Faqat narxni oshirish",
+      "Faqat transport turini almashtirish",
+      "Faqat savdo nuqtalarini ko‘paytirish"
+    ],
+    answer: "Talqin va hikoyalash",
   },
   {
     id: 5,
-    question: "Elektr kuchlanishi nima?",
+    question: "Muqobil turizmning asosiy xususiyatlaridan biri qaysi?",
     options: [
-      "Tok tezligi",
-      "Zaryadlar soni",
-      "Zaryadlarni harakatga keltiruvchi kuch",
-      "Qarshilik turi"
+      "Mahalliy muhitga mas’uliyatli munosabat",
+      "Faqat ommaviy oqimni ko‘paytirish",
+      "Meros obyektlarini cheklovsiz ishlatish",
+      "Faqat ko‘ngilochar xizmatlar"
     ],
-    answer: "Zaryadlarni harakatga keltiruvchi kuch",
+    answer: "Mahalliy muhitga mas’uliyatli munosabat",
   },
   {
     id: 6,
-    question: "Elektr zanjiri nima?",
+    question: "Madaniy meros obyektlarini boshqarishda eng maqbul yondashuv qaysi?",
     options: [
-      "Faqat generator",
-      "Faqat iste’molchi",
-      "Tok o‘tadigan yopiq yo‘l",
-      "Faqat sim"
+      "Saqlash va foydalanish manfaatlarini muvozanatlash",
+      "Faqat turistlar sonini oshirish",
+      "Obyektni to‘liq tijoratlashtirish",
+      "Mahalliy aholini chetlashtirish"
     ],
-    answer: "Tok o‘tadigan yopiq yo‘l",
+    answer: "Saqlash va foydalanish manfaatlarini muvozanatlash",
   },
   {
     id: 7,
-    question: "O‘zgarmas tok qanday tok?",
+    question: "Muzeyning turizmdagi muhim vazifasi nima?",
     options: [
-      "Yo‘nalishi o‘zgaruvchi tok",
-      "Yo‘nalishi o‘zgarmaydigan tok",
-      "Faqat yuqori kuchlanishli tok",
-      "Magnit tok"
+      "Tarixiy-madaniy axborotni talqin qilib yetkazish",
+      "Faqat suvenir sotish",
+      "Faqat binoni saqlash",
+      "Faqat statistik ma’lumot to‘plash"
     ],
-    answer: "Yo‘nalishi o‘zgarmaydigan tok",
+    answer: "Tarixiy-madaniy axborotni talqin qilib yetkazish",
   },
   {
     id: 8,
-    question: "O‘zgaruvchan tokning chastotasi nimani bildiradi?",
+    question: "Muzey ekspozitsiyasi bilan ishlashda gid uchun eng muhim talab qaysi?",
     options: [
-      "Tok kuchini",
-      "Qarshilikni",
-      "Sekunddagi tebranishlar sonini",
-      "Kuchlanishni"
+      "Eksponatni kontekst bilan tushuntirish",
+      "Faqat sanalarni yoddan aytish",
+      "Faqat o‘z fikrini bildirish",
+      "Faqat qisqa gapirish"
     ],
-    answer: "Sekunddagi tebranishlar sonini",
+    answer: "Eksponatni kontekst bilan tushuntirish",
   },
   {
     id: 9,
-    question: "Transformatorning asosiy vazifasi nima?",
+    question: "Dark turizm nimaga bog‘liq obyekt va voqealarga tashrifni anglatadi?",
     options: [
-      "Tokni ishlab chiqarish",
-      "Kuchlanishni o‘zgartirish",
-      "Qarshilikni oshirish",
-      "Tokni to‘xtatish"
+      "Faqat tungi sayohatlarga",
+      "Fojia, halokat yoki og‘ir tarixiy xotira bilan bog‘liq joylarga",
+      "Faqat yerosti inshootlariga",
+      "Faqat sarguzasht turizmiga"
     ],
-    answer: "Kuchlanishni o‘zgartirish",
+    answer: "Fojia, halokat yoki og‘ir tarixiy xotira bilan bog‘liq joylarga",
   },
   {
     id: 10,
-    question: "Generator nima qiladi?",
+    question: "Dark turizmda gidning etik vazifasi nimadan iborat?",
     options: [
-      "Elektrni saqlaydi",
-      "Elektr energiyasini mexanik energiyaga aylantiradi",
-      "Mexanik energiyani elektr energiyasiga aylantiradi",
-      "Tokni kamaytiradi"
+      "Vaziyatni sensatsiyalashtirish",
+      "Qurbonlar xotirasiga hurmat bilan, faktlarga tayangan holda talqin qilish",
+      "Faqat kulgili hikoyalar aytish",
+      "Faktlarni ataylab dramatizatsiya qilish"
     ],
-    answer: "Mexanik energiyani elektr energiyasiga aylantiradi",
+    answer: "Qurbonlar xotirasiga hurmat bilan, faktlarga tayangan holda talqin qilish",
   },
   {
     id: 11,
-    question: "Elektr motor nima qiladi?",
+    question: "Arxeologik yodgorlikning asosiy ilmiy qiymati nimada?",
     options: [
-      "Elektrni ishlab chiqaradi",
-      "Elektrni yo‘q qiladi",
-      "Elektr energiyasini mexanik energiyaga aylantiradi",
-      "Tokni saqlaydi"
+      "O‘tmish hayoti va madaniyati haqida dalil berishida",
+      "Faqat sayyohlarni suratga tushirishida",
+      "Faqat savdo maydoni yaratishida",
+      "Faqat zamonaviy arxitektura namunasida"
     ],
-    answer: "Elektr energiyasini mexanik energiyaga aylantiradi",
+    answer: "O‘tmish hayoti va madaniyati haqida dalil berishida",
   },
   {
     id: 12,
-    question: "Qisqa tutashuv nima?",
+    question: "Arxeologik obyektga ekskursiyada qaysi tamoyil muhim?",
     options: [
-      "Tokning kamayishi",
-      "Tokning uzilishi",
-      "Qarshilik juda kichik bo‘lganda tokning keskin ortishi",
-      "Kuchlanish yo‘qolishi"
+      "Obyektni asrash va tushuntirishni uyg‘unlashtirish",
+      "Topilmalarni qo‘lga olishga ruxsat berish",
+      "Cheklovlarni bekor qilish",
+      "Faqat tezkor ko‘rik o‘tkazish"
     ],
-    answer: "Qarshilik juda kichik bo‘lganda tokning keskin ortishi",
+    answer: "Obyektni asrash va tushuntirishni uyg‘unlashtirish",
   },
   {
     id: 13,
-    question: "Elektr quvvatining formulasi qaysi?",
-    options: ["P=U+I", "P=U/I", "P=U*I", "P=I-R"],
-    answer: "P=U*I",
+    question: "Volontyor turizm nimani birlashtiradi?",
+    options: [
+      "Sayohat va ixtiyoriy foydali faoliyatni",
+      "Faqat pullik mehnatni",
+      "Faqat sportni",
+      "Faqat xizmat ko‘rsatishni"
+    ],
+    answer: "Sayohat va ixtiyoriy foydali faoliyatni",
   },
   {
     id: 14,
-    question: "Quvvat birligi nima?",
-    options: ["Volt", "Amper", "Om", "Vatt"],
-    answer: "Vatt",
+    question: "Madaniy meros sohasidagi volontyorlikka qaysi faoliyat mos keladi?",
+    options: [
+      "Axborot tarqatish va merosni asrash aksiyalarida qatnashish",
+      "Obyektga ruxsatsiz o‘zgartirish kiritish",
+      "Eksponatlarni olib chiqish",
+      "Tarixiy faktlarni o‘zgartirish"
+    ],
+    answer: "Axborot tarqatish va merosni asrash aksiyalarida qatnashish",
   },
   {
     id: 15,
-    question: "Elektr energiyasi nima?",
+    question: "Umummadaniy kompetensiyaning aksiologik komponenti nimani ifodalaydi?",
     options: [
-      "Tok kuchi",
-      "Kuchlanish",
-      "Quvvat va vaqt ko‘paytmasi",
-      "Qarshilik"
+      "Qadriyatlarga hurmat va mas’uliyatli munosabatni",
+      "Faqat faktlarni eslab qolishni",
+      "Faqat texnik hisob-kitobni",
+      "Faqat jismoniy faollikni"
     ],
-    answer: "Quvvat va vaqt ko‘paytmasi",
+    answer: "Qadriyatlarga hurmat va mas’uliyatli munosabatni",
   },
   {
     id: 16,
-    question: "Kondensator nima uchun ishlatiladi?",
+    question: "Madaniy obyekt haqida gid matni tuzishda avvalo nima aniqlanadi?",
     options: [
-      "Tokni oshirish uchun",
-      "Zaryad to‘plash uchun",
-      "Tokni yo‘q qilish uchun",
-      "Qarshilikni kamaytirish uchun"
+      "Asosiy tarixiy-madaniy g‘oya va auditoriya",
+      "Faqat matn hajmi",
+      "Faqat bezak turi",
+      "Faqat reklama shiori"
     ],
-    answer: "Zaryad to‘plash uchun",
+    answer: "Asosiy tarixiy-madaniy g‘oya va auditoriya",
   },
   {
     id: 17,
-    question: "Induktivlik nimani bildiradi?",
+    question: "Meros obyektidan turizmda foydalanishning barqaror shakli qaysi?",
     options: [
-      "Qarshilikni",
-      "Zaryadni",
-      "Magnit maydonda energiya yig‘ish qobiliyatini",
-      "Kuchlanishni"
+      "Tashrifni boshqarish va muhofaza talablariga rioya qilish",
+      "Cheklovsiz turist oqimi",
+      "Har qanday qurilishga ruxsat berish",
+      "Faqat tijorat tadbirlari o‘tkazish"
     ],
-    answer: "Magnit maydonda energiya yig‘ish qobiliyatini",
+    answer: "Tashrifni boshqarish va muhofaza talablariga rioya qilish",
   },
   {
     id: 18,
-    question: "Elektr mashinalari nechta asosiy turga bo‘linadi?",
-    options: ["2", "3", "4", "5"],
-    answer: "2",
+    question: "Madaniy turizmda autentiklik tushunchasi nimaga yaqin?",
+    options: [
+      "Obyekt yoki an’ananing haqiqiyligi va o‘ziga xosligiga",
+      "Faqat yangi dizaynga",
+      "Faqat reklama uslubiga",
+      "Faqat qulaylik darajasiga"
+    ],
+    answer: "Obyekt yoki an’ananing haqiqiyligi va o‘ziga xosligiga",
   },
   {
     id: 19,
-    question: "Asinxron motor qaysi sohada keng qo‘llaniladi?",
+    question: "Muzeyda interaktiv topshiriqning asosiy pedagogik foydasi nima?",
     options: [
-      "Faqat laboratoriyada",
-      "Transportda",
-      "Sanoatda",
-      "Faqat uyda"
+      "Kuzatish, tahlil va muloqotni faollashtiradi",
+      "Faqat vaqtni to‘ldiradi",
+      "Faqat baho qo‘yishni osonlashtiradi",
+      "Faqat eksponatlar sonini oshiradi"
     ],
-    answer: "Sanoatda",
+    answer: "Kuzatish, tahlil va muloqotni faollashtiradi",
   },
   {
     id: 20,
-    question: "Sinxron motorning asosiy xususiyati nima?",
+    question: "Madaniy meros obyektiga oid WebQuestning asosiy natijasi nima bo‘lishi kerak?",
     options: [
-      "Tezligi o‘zgaradi",
-      "Tezligi yukga bog‘liq",
-      "Rotor tezligi magnit maydon tezligiga teng",
-      "Tokni ishlab chiqaradi"
+      "Ishonchli manbalardan ma’lumot izlash, tahlil qilish va mahsulot yaratish",
+      "Faqat nusxa ko‘chirish",
+      "Faqat bitta saytni yodlash",
+      "Faqat test yechish"
     ],
-    answer: "Rotor tezligi magnit maydon tezligiga teng",
+    answer: "Ishonchli manbalardan ma’lumot izlash, tahlil qilish va mahsulot yaratish",
   },
   {
     id: 21,
-    question: "Elektr yuritma nima?",
+    question: "Ziyorat turizmining markaziy motivi qaysi?",
     options: [
-      "Tok manbai",
-      "Elektr dvigatel va boshqaruv tizimi majmui",
-      "Faqat sim",
-      "Generator"
+      "Ma’naviy-diniy qadriyatlar bilan bog‘liq joylarga tashrif",
+      "Faqat sport musobaqalari",
+      "Faqat xarid qilish",
+      "Faqat dengiz bo‘yida dam olish"
     ],
-    answer: "Elektr dvigatel va boshqaruv tizimi majmui",
+    answer: "Ma’naviy-diniy qadriyatlar bilan bog‘liq joylarga tashrif",
   },
   {
     id: 22,
-    question: "Rele nima vazifani bajaradi?",
+    question: "Ziyorat obyektida turistga qoidalarni tushuntirishda gid qanday uslubdan foydalanishi kerak?",
     options: [
-      "Tokni ishlab chiqaradi",
-      "Signalni kuchaytiradi",
-      "Zanjirni avtomatik ulaydi yoki uzadi",
-      "Tokni saqlaydi"
+      "Hurmatli, xolis va tushunarli",
+      "Buyruqboz va keskin",
+      "Hazil-mutoyibaga asoslangan",
+      "Noaniq va umumiy"
     ],
-    answer: "Zanjirni avtomatik ulaydi yoki uzadi",
+    answer: "Hurmatli, xolis va tushunarli",
   },
   {
     id: 23,
-    question: "Elektr xavfsizligi nima uchun muhim?",
+    question: "Madaniy markazlarning turizmdagi vazifasi nima?",
     options: [
-      "Faqat ishlab chiqarish uchun",
-      "Qurilmalarni saqlash uchun",
-      "Inson hayotini himoya qilish uchun",
-      "Tokni oshirish uchun"
+      "Mahalliy madaniyatni namoyish etish va muloqot maydonini yaratish",
+      "Faqat savdo qilish",
+      "Faqat transport xizmatini ko‘rsatish",
+      "Faqat sport tadbiri o‘tkazish"
     ],
-    answer: "Inson hayotini himoya qilish uchun",
+    answer: "Mahalliy madaniyatni namoyish etish va muloqot maydonini yaratish",
   },
   {
     id: 24,
-    question: "Yerga ulash (zazemlenie) nima?",
+    question: "Madaniy markaz uchun turistik dastur tuzishda nimalar uyg‘unlashtiriladi?",
     options: [
-      "Tokni oshirish",
-      "Qarshilikni kamaytirish",
-      "Tokni yerga uzatish orqali himoya qilish",
-      "Kuchlanishni oshirish"
+      "Ko‘rgazma, ijodiy faoliyat, mahalliy an’ana va muloqot",
+      "Faqat reklama",
+      "Faqat chipta narxi",
+      "Faqat transport jadvali"
     ],
-    answer: "Tokni yerga uzatish orqali himoya qilish",
+    answer: "Ko‘rgazma, ijodiy faoliyat, mahalliy an’ana va muloqot",
   },
   {
     id: 25,
-    question: "Elektr energiyasini tejash nimani anglatadi?",
+    question: "Turizmda tarixni talqin qilish nimani anglatadi?",
     options: [
-      "Ko‘proq energiya ishlatish",
-      "Energiyani yo‘q qilish",
-      "Energiya sarfini kamaytirish",
-      "Tokni oshirish"
+      "Tarixiy ma’lumotni auditoriyaga mazmunli va asosli tushuntirish",
+      "Faktlarni o‘zgartirish",
+      "Faqat sanalarni sanash",
+      "Rivoyatni fakt sifatida taqdim etish"
     ],
-    answer: "Energiya sarfini kamaytirish",
+    answer: "Tarixiy ma’lumotni auditoriyaga mazmunli va asosli tushuntirish",
   },
   {
     id: 26,
-    question: "Avtomatlashtirish nima?",
+    question: "Tarixiy rivoyatni gid qanday taqdim etishi maqsadga muvofiq?",
     options: [
-      "Qo‘lda boshqarish",
-      "Jarayonlarni inson ishtirokisiz boshqarish",
-      "Tokni kamaytirish",
-      "Kuchlanishni oshirish"
+      "Uni rivoyat ekanini aniq ajratib ko‘rsatib",
+      "Uni tekshirilgan fakt sifatida",
+      "Manbasiz mutlaq haqiqat sifatida",
+      "Faqat dramatik effekt uchun"
     ],
-    answer: "Jarayonlarni inson ishtirokisiz boshqarish",
+    answer: "Uni rivoyat ekanini aniq ajratib ko‘rsatib",
   },
   {
     id: 27,
-    question: "Datchik (sensor) nima?",
+    question: "O‘troq madaniyatning muhim belgisi qaysi?",
     options: [
-      "Tok manbai",
-      "Ma’lumotni sezuvchi va signalga aylantiruvchi qurilma",
-      "Generator",
-      "Sim"
+      "Doimiy yashash joyi va shakllangan shahar-qishloq madaniy muhiti",
+      "Faqat ko‘chmanchi hayot",
+      "Faqat mavsumiy lager",
+      "Faqat zamonaviy mehmonxona"
     ],
-    answer: "Ma’lumotni sezuvchi va signalga aylantiruvchi qurilma",
+    answer: "Doimiy yashash joyi va shakllangan shahar-qishloq madaniy muhiti",
   },
   {
     id: 28,
-    question: "Invertor nima qiladi?",
+    question: "O‘troq madaniyatni o‘rganishda qaysi obyektlar muhim manba bo‘la oladi?",
     options: [
-      "O‘zgaruvchan tokni o‘zgarmas tokka aylantiradi",
-      "Tokni saqlaydi",
-      "O‘zgarmas tokni o‘zgaruvchan tokka aylantiradi",
-      "Qarshilikni oshiradi"
+      "Mahalla, hunarmandchilik, me’moriy muhit va kundalik turmush",
+      "Faqat aeroportlar",
+      "Faqat savdo markazlari",
+      "Faqat sport inshootlari"
     ],
-    answer: "O‘zgarmas tokni o‘zgaruvchan tokka aylantiradi",
+    answer: "Mahalla, hunarmandchilik, me’moriy muhit va kundalik turmush",
   },
   {
     id: 29,
-    question: "Elektr tizimida himoya apparatlari nima uchun kerak?",
+    question: "UNESCOning madaniy meros sohasidagi asosiy roli nimaga qaratilgan?",
     options: [
-      "Tokni oshirish uchun",
-      "Energiya ishlab chiqarish uchun",
-      "Nosozliklardan himoya qilish uchun",
-      "Qarshilikni kamaytirish uchun"
+      "Muhim merosni muhofaza qilish va xalqaro hamkorlikni qo‘llab-quvvatlash",
+      "Faqat turpaket sotish",
+      "Faqat mehmonxona qurish",
+      "Faqat reklama qilish"
     ],
-    answer: "Nosozliklardan himoya qilish uchun",
+    answer: "Muhim merosni muhofaza qilish va xalqaro hamkorlikni qo‘llab-quvvatlash",
   },
   {
     id: 30,
-    question: "Raqamli texnologiyalar elektr sohada nima uchun qo‘llaniladi?",
+    question: "UNESCO bilan bog‘liq meros obyektlarida turizmni tashkil etishda qaysi tamoyil muhim?",
     options: [
-      "Faqat hisoblash uchun",
-      "Qog‘oz ishlarini kamaytirish uchun",
-      "Jarayonlarni modellashtirish va avtomatlashtirish uchun",
-      "Tokni kamaytirish uchun"
+      "Muhofaza, boshqaruv va mas’uliyatli tashrif",
+      "Faqat turistlar sonini maksimal oshirish",
+      "Cheklovlarni bekor qilish",
+      "Faqat tijorat maqsadi"
     ],
-    answer: "Jarayonlarni modellashtirish va avtomatlashtirish uchun",
+    answer: "Muhofaza, boshqaruv va mas’uliyatli tashrif",
+  },
+  {
+    id: 31,
+    question: "ICOMOS asosan qaysi yo‘nalish bilan bog‘liq?",
+    options: [
+      "Yodgorliklar va tarixiy joylarni muhofaza qilish bo‘yicha ekspertiza va maslahat",
+      "Aviatsiya xavfsizligi",
+      "Sport turizmi",
+      "Mehmonxona marketingi"
+    ],
+    answer: "Yodgorliklar va tarixiy joylarni muhofaza qilish bo‘yicha ekspertiza va maslahat",
+  },
+  {
+    id: 32,
+    question: "ICOMOSga xos professional yondashuv qaysi?",
+    options: [
+      "Autentiklik, yaxlitlik va muhofaza holatini ekspert baholash",
+      "Faqat chipta narxini baholash",
+      "Faqat turistlar fikrini hisoblash",
+      "Faqat reklama matnini tekshirish"
+    ],
+    answer: "Autentiklik, yaxlitlik va muhofaza holatini ekspert baholash",
+  },
+  {
+    id: 33,
+    question: "World Monuments Fund faoliyatiga qaysi yo‘nalish mos?",
+    options: [
+      "Xavf ostidagi madaniy meros obyektlarini saqlashni qo‘llab-quvvatlash",
+      "Faqat yangi ko‘ngilochar markazlar qurish",
+      "Faqat transport infratuzilmasi",
+      "Faqat savdo yarmarkalari"
+    ],
+    answer: "Xavf ostidagi madaniy meros obyektlarini saqlashni qo‘llab-quvvatlash",
+  },
+  {
+    id: 34,
+    question: "Meros obyektiga tahdidlarni aniqlashda qaysi omillar baholanadi?",
+    options: [
+      "Tabiiy, antropogen va boshqaruv bilan bog‘liq xavflar",
+      "Faqat ob-havo",
+      "Faqat chipta narxi",
+      "Faqat reklama hajmi"
+    ],
+    answer: "Tabiiy, antropogen va boshqaruv bilan bog‘liq xavflar",
+  },
+  {
+    id: 35,
+    question: "Madaniyatlararo muloqotda gidning eng muhim sifati qaysi?",
+    options: [
+      "Hurmat, moslashuvchanlik va xolis muloqot",
+      "Faqat tez gapirish",
+      "Faqat ko‘p ma’lumot berish",
+      "Faqat chet tilidagi murakkab terminlar ishlatish"
+    ],
+    answer: "Hurmat, moslashuvchanlik va xolis muloqot",
+  },
+  {
+    id: 36,
+    question: "Turist savoliga javob noma’lum bo‘lsa, gid qanday yo‘l tutishi kerak?",
+    options: [
+      "Bilmasligini xolis aytib, ishonchli manbadan aniqlashni va’da qilish",
+      "Taxminiy javobni fakt sifatida aytish",
+      "Savolni e’tiborsiz qoldirish",
+      "Turistni tanqid qilish"
+    ],
+    answer: "Bilmasligini xolis aytib, ishonchli manbadan aniqlashni va’da qilish",
+  },
+  {
+    id: 37,
+    question: "Ziyorat marshrutida vaqt rejalashtirishda nimani hisobga olish kerak?",
+    options: [
+      "Ibodat va odob qoidalari, tashrif vaqti, turist ehtiyojlari",
+      "Faqat suratga olish vaqti",
+      "Faqat savdo qilish",
+      "Faqat transport narxi"
+    ],
+    answer: "Ibodat va odob qoidalari, tashrif vaqti, turist ehtiyojlari",
+  },
+  {
+    id: 38,
+    question: "Madaniy markazda loyiha topshirig‘ining samarali mahsuloti qaysi?",
+    options: [
+      "Mahalliy madaniyatni namoyish etuvchi turistik dastur yoki tadbir konsepsiyasi",
+      "Faqat shior",
+      "Faqat bir jumlalik izoh",
+      "Faqat narxlar jadvali"
+    ],
+    answer: "Mahalliy madaniyatni namoyish etuvchi turistik dastur yoki tadbir konsepsiyasi",
+  },
+  {
+    id: 39,
+    question: "Tarixiy talqinda manbalarni solishtirish nima uchun kerak?",
+    options: [
+      "Faktlarning ishonchliligini tekshirish va turli nuqtai nazarni ko‘rish uchun",
+      "Faqat matnni uzaytirish uchun",
+      "Faqat bitta manbani tasdiqlash uchun",
+      "Faqat bezak uchun"
+    ],
+    answer: "Faktlarning ishonchliligini tekshirish va turli nuqtai nazarni ko‘rish uchun",
+  },
+  {
+    id: 40,
+    question: "Umummadaniy kompetensiyaning shaxsiy-kommunikativ komponenti nimani qamrab oladi?",
+    options: [
+      "Nutq madaniyati, muloqot, moslashuvchanlik va etik xulq",
+      "Faqat tarixiy sanalar",
+      "Faqat iqtisodiy hisob",
+      "Faqat jismoniy mehnat"
+    ],
+    answer: "Nutq madaniyati, muloqot, moslashuvchanlik va etik xulq",
   },
 ];
-
 
 
 const user_answer = new Array(25).fill(null);
